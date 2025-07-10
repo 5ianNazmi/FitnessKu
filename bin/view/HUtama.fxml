@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="600.0" prefWidth="400.0" stylesheets="@../resource/HUtama.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <Text fill="#00ff6a" layoutX="14.0" layoutY="58.0" styleClass="header-title" text="FITNESSKU" />
+        <Text fill="WHITE" layoutX="14.0" layoutY="101.0" styleClass="section-title" text="Halo User!" wrappingWidth="123.89599609375">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Text>
+        <VBox layoutX="7.0" layoutY="125.0" prefHeight="463.0" prefWidth="386.0" spacing="18.0">
+            <children>
+                <HBox spacing="18.0">
+                    <children>
+                        <AnchorPane prefHeight="80.0" prefWidth="140.0" styleClass="card">
+                            <children>
+                                <Text fill="#00ff6a" layoutX="14.0" layoutY="30.0" styleClass="card-title" text="Poin" />
+                                <Text fill="WHITE" layoutX="10.0" layoutY="55.0" styleClass="card-content" text="1000" />
+                            </children>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="80.0" prefWidth="140.0" styleClass="card">
+                            <children>
+                                <Text fill="#00ff6a" layoutX="10.0" layoutY="28.0" styleClass="card-title" text="Leaderboard" />
+                                <Text fill="WHITE" layoutX="10.0" layoutY="55.0" styleClass="card-content" text="Ranking #" />
+                            </children>
+                        </AnchorPane>
+                    </children>
+                </HBox>
+                <HBox spacing="18.0">
+                    <children>
+                        <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="181.0" prefWidth="222.0" styleClass="card">
+                            <children>
+                                <Text fill="#00ff6a" layoutX="24.0" layoutY="46.0" styleClass="card-title" text="Workout" />
+                            </children>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="181.0" prefWidth="140.0" styleClass="card">
+                            <children>
+                                <Text fill="#00ff6a" layoutX="27.0" layoutY="47.0" styleClass="card-title" text="Tantangan" />
+                            </children>
+                        </AnchorPane>
+                    </children>
+                </HBox>
+                <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="92.0" prefWidth="383.0" styleClass="card">
+                    <children>
+                        <Text fill="#00ff6a" layoutX="154.0" layoutY="51.0" styleClass="card-title" text="Progress" />
+                    </children>
+                </AnchorPane>
+            </children>
+        </VBox>
+    </children>
+</AnchorPane>

@@ -1,0 +1,107 @@
+/* CSS Login Page - tema dark dan hijau seperti VOpsiWorkout */
+
+.root {
+    -fx-background-color: #181A20;
+    -fx-font-family: 'Arial', sans-serif;
+}
+
+/* --- Login Page Container --- */
+
+.login-pane {
+    -fx-alignment: center; /* Center all content */
+    -fx-padding: 30px; /* More padding for a cleaner look */
+    -fx-spacing: 15px; /* Space between elements */
+    -fx-max-width: 400px; /* Limit width for a mobile-like feel on desktop */
+    -fx-background-color: #23272F; /* Dark background for the form area */
+    -fx-background-radius: 10px; /* Slightly rounded corners for the form */
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 15, 0, 0, 5); /* Soft shadow for depth */
+}
+
+/* --- Title/Heading --- */
+
+.login-title {
+    -fx-font-size: 28px; /* Prominent title */
+    -fx-font-weight: bold;
+    -fx-text-fill: #43A047; /* Green color for the title */
+    -fx-alignment: center;
+    -fx-padding: 0 0 20px 0; /* More space below the title */
+}
+
+/* --- Text Fields (Input) --- */
+
+.text-field {
+    -fx-pref-height: 45px; /* Taller input fields */
+    -fx-font-size: 16px;
+    -fx-prompt-text-fill: #999999; /* Placeholder text color */
+    -fx-background-color: #23272F; /* Dark background for inputs */
+    -fx-text-fill: #E0E0E0; /* Light gray text color for inputs */
+    -fx-border-color: #43A047; /* Green border */
+    -fx-border-width: 1px;
+    -fx-border-radius: 5px; /* Slightly rounded corners */
+    -fx-padding: 0 10px; /* Padding inside the text field */
+    -fx-highlight-fill: #43A047; /* Green for selected text */
+    -fx-highlight-text-fill: #181A20; /* Dark background for selected text */
+}
+
+.text-field:focused {
+    -fx-border-color: #43A047; /* Green border when focused */
+    -fx-background-color: #181A20; /* Dark background when focused */
+}
+
+/* --- Buttons --- */
+
+.login-button {
+    -fx-background-color: #43A047; /* Green background for primary action (Masuk) */
+    -fx-text-fill: #181A20; /* Dark text color */
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 30px; /* Rounded buttons */
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, #43A047, 5, 0, 0, 2);
+    -fx-pref-width: 200px; /* Fixed width for consistency */
+}
+
+.login-button:hover {
+    -fx-background-color: #388E3C; /* Darker green on hover */
+}
+
+.login-button:pressed {
+    -fx-background-color: #3e8e41;
+    -fx-translate-y: 1px;
+}
+
+.register-button {
+    -fx-background-color: #23272F; /* Dark background for secondary action (Daftar) */
+    -fx-text-fill: #43A047; /* Green text color */
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 30px;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, #43A047, 5, 0, 0, 2);
+    -fx-pref-width: 200px; /* Fixed width for consistency */
+}
+
+.register-button:hover {
+    -fx-background-color: #263238; /* Darker shade on hover */
+    -fx-text-fill: #43A047; /* Green text color on hover */
+}
+
+.register-button:pressed {
+    -fx-background-color: #1565C0;
+    -fx-translate-y: 1px;
+}
+
+/* --- Optional: Link for Forgot Password --- */
+
+.forgot-password-link {
+    -fx-text-fill: #43A047; /* Green color for the link */
+    -fx-font-size: 14px;
+    -fx-underline: false;
+    -fx-cursor: hand;
+    -fx-padding: 5px;
+    -fx-alignment: center; /* Center the link */
+}
+
+.forgot-password-link:hover {
+    -fx-underline: true;
+}

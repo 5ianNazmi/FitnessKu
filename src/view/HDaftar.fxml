@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="600.0" prefWidth="400.0" stylesheets="@../resource/HDaftar.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CDaftar">
+   <children>
+      <Text fill="#00ff6a" layoutX="142.0" layoutY="91.0" styleClass="login-title" text="DAFTAR" />
+      <TextField fx:id="usernameField" layoutX="100.0" layoutY="130.0" prefHeight="45.0" prefWidth="200.0" promptText="Username" styleClass="text-field" />
+      <TextField fx:id="emailField" layoutX="100.0" layoutY="190.0" prefHeight="45.0" prefWidth="200.0" promptText="Email" styleClass="text-field" />
+      <PasswordField fx:id="passwordField" layoutX="100.0" layoutY="250.0" prefHeight="45.0" prefWidth="200.0" promptText="Password" styleClass="text-field" />
+      <PasswordField fx:id="confirmPasswordField" layoutX="100.0" layoutY="310.0" prefHeight="45.0" prefWidth="200.0" promptText="Konfirmasi Password" styleClass="text-field" />
+      <Button fx:id="daftarButton" layoutX="100.0" layoutY="380.0" prefHeight="45.0" prefWidth="200.0" styleClass="login-button" text="Daftar" onAction="#handleDaftar" />
+      <Text fx:id="statusText" fill="#ff5252" layoutX="100.0" layoutY="430.0" text="" />
+      <Text fill="WHITE" layoutX="147.0" layoutY="448.0" text="Sudah punya akun?" />
+      <Button fx:id="registerButton" layoutX="100.0" layoutY="460.0" prefHeight="45.0" prefWidth="200.0" styleClass="register-button" text="Masuk" onAction="#handleGoToLogin" />
+   </children>
+</AnchorPane>

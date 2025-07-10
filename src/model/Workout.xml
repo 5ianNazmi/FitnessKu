@@ -1,0 +1,7 @@
+<workouts>
+    <user username="favian">
+        <workout>Full Body</workout>
+        <workout>Legs</workout>
+    </user>
+    <!-- Tambahkan user lain dengan format serupa -->
+</workouts>

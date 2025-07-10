@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<users>
+    <user>
+        <username>favian</username>
+        <email>favian@gmail.com</email>
+        <password>vian</password>
+        <workouts/>
+        <poin>0</poin>
+        <level>1</level>
+        <progress>0</progress>
+    </user>
+</users>

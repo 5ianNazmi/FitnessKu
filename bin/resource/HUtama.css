@@ -1,0 +1,97 @@
+/* CSS utama aplikasi fitness - tema dark dan hijau (konsisten dengan VOpsiWorkout) */
+
+.root {
+    -fx-background-color: #181A20;
+    -fx-font-family: 'Segoe UI', 'Poppins', 'Roboto', 'Arial', sans-serif;
+}
+
+.header-title {
+    -fx-font-size: 32px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #43A047;
+    -fx-alignment: center;
+    -fx-padding: 20 0 10 0;
+}
+
+.section-title {
+    -fx-font-size: 25px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #43A047;
+    -fx-padding: 10 0 5 0;
+}
+
+.menu-button {
+    -fx-background-color: transparent;
+    -fx-border-color: #43A047;
+    -fx-border-width: 2px;
+    -fx-text-fill: #43A047;
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 20px;
+    -fx-border-radius: 20px;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, #43A047, 5, 0, 0, 2);
+}
+
+.menu-button:hover {
+    -fx-background-color: #263238;
+    -fx-text-fill: #43A047;
+}
+
+.menu-button:pressed, .menu-button:selected {
+    -fx-background-color: #43A047;
+    -fx-text-fill: #181A20;
+    -fx-border-color: #43A047;
+}
+
+.card {
+    -fx-background-color: #23272F;
+    -fx-background-radius: 22px;
+    -fx-padding: 16px;
+    -fx-effect: dropshadow(gaussian, #43A04755, 12, 0.2, 0, 4);
+    -fx-cursor: hand;
+    -fx-border-color: transparent;
+    -fx-border-width: 2px;
+    -fx-border-radius: 22px;
+    -fx-transition: all 0.2s;
+    -fx-spacing: 10px;
+}
+
+.card:hover {
+    -fx-background-color: #263238;
+    -fx-effect: dropshadow(gaussian, #43A047, 18, 0.3, 0, 6);
+    -fx-border-color: #43A047;
+}
+
+.card:pressed {
+    -fx-background-color: #1b1d23;
+    -fx-effect: dropshadow(gaussian, #43A047, 8, 0.1, 0, 2);
+}
+
+.card-title {
+    -fx-font-size: 17px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #43A047;
+    -fx-padding: 0 0 6 0;
+}
+
+.card-content {
+    -fx-font-size: 15px;
+    -fx-text-fill: #E0E0E0;
+}
+
+.card-container {
+    -fx-background-color: #20232a;
+    -fx-background-radius: 28px;
+    -fx-padding: 28px 18px 28px 18px;
+    -fx-effect: dropshadow(gaussian, #43A04744, 18, 0.2, 0, 6);
+    -fx-spacing: 18px;
+    -fx-border-color: #23272F;
+    -fx-border-width: 2px;
+    -fx-border-radius: 28px;
+}
+
+/* Spacing antar card */
+.anchor-pane > .card {
+    -fx-margin-bottom: 18px;
+}
