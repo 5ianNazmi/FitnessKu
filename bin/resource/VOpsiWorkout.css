@@ -5,6 +5,97 @@
     -fx-font-family: 'Arial', sans-serif;
 }
 
+/* --- Container utama --- */
+.main-container {
+    -fx-padding: 32px 0 32px 0;
+    -fx-alignment: center;
+    -fx-spacing: 24px;
+}
+
+/* --- Card Container --- */
+.card-container {
+    -fx-background-color: #181A20;
+    -fx-background-radius: 18px;
+    -fx-padding: 24px 32px 24px 32px;
+    -fx-effect: dropshadow(gaussian, #e0e0e0, 8, 0.2, 0, 2);
+    -fx-spacing: 24px;
+}
+
+/* --- Card --- */
+.card {
+    -fx-background-color: #23272F;
+    -fx-background-radius: 16px;
+    -fx-padding: 18px 18px 18px 18px;
+    -fx-effect: dropshadow(gaussian, #43A047, 4, 0.1, 0, 1);
+    -fx-spacing: 10;
+}
+
+.card-title {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #fff;
+    -fx-padding: 0 0 8px 0;
+}
+
+/* --- Section Title --- */
+.section-title {
+    -fx-font-size: 28px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #fff;
+    -fx-padding: 0 0 0 24;
+}
+
+/* --- Tombol workout --- */
+.workout-button {
+    -fx-background-color: #23272F;
+    -fx-text-fill: #fff;
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 12px;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, #43A047, 4, 0.1, 0, 1);
+    -fx-pref-width: 180px;
+    -fx-pref-height: 60px;
+    -fx-border-color: #43A047;
+    -fx-border-width: 2px;
+    -fx-border-radius: 12px;
+    -fx-padding: 8px 0 8px 0;
+    -fx-transition: background-color 0.2s;
+}
+.workout-button:selected, .workout-button.selected {
+    -fx-background-color: #43A047;
+    -fx-text-fill: #fff;
+}
+.workout-button:hover {
+    -fx-background-color: #388E3C;
+}
+
+/* --- Tombol simpan --- */
+.save-button {
+    -fx-background-color: linear-gradient(to right, #43A047, #43A047);
+    -fx-text-fill: #fff;
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 12px;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, #43A047, 8, 0.2, 0, 2);
+    -fx-pref-width: 200px;
+}
+.save-button:hover {
+    -fx-background-color: #388E3C;
+}
+.save-button:pressed {
+    -fx-background-color: #3e8e41;
+    -fx-translate-y: 1px;
+}
+
+/* --- See all link --- */
+.see-all {
+    -fx-font-size: 14px;
+    -fx-text-fill: #43A047;
+    -fx-font-weight: bold;
+}
+
 .transparent-workout-button {
     -fx-background-color: transparent;
     -fx-border-color: #43A047;

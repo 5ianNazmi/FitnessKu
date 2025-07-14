@@ -1,0 +1,35 @@
+/* CSS Opsi Notifikasi - tema dark hijau */
+
+.notif-root {
+    -fx-background-color: #181A20;
+    -fx-padding: 40px 0 40px 0;
+    -fx-alignment: center;
+}
+
+.notif-title {
+    -fx-font-size: 28px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #43A047;
+    -fx-padding: 0 0 18px 0;
+}
+
+.notif-label {
+    -fx-font-size: 16px;
+    -fx-text-fill: #E0E0E0;
+    -fx-font-weight: bold;
+}
+
+.notif-save-btn {
+    -fx-background-color: #43A047;
+    -fx-text-fill: #181A20;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 20px;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, #43A047, 5, 0, 0, 2);
+    -fx-pref-width: 120px;
+}
+
+.notif-save-btn:hover {
+    -fx-background-color: #388E3C;
+}

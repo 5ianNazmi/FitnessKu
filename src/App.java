@@ -7,7 +7,7 @@ import javafx.stage.Stage;
 public class App extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("/view/HLogin.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/view/VOpsiNotif.fxml"));
         Scene scene = new Scene(root);
         primaryStage.setTitle("JavaFX Test 24523059");
         primaryStage.setResizable(true);
