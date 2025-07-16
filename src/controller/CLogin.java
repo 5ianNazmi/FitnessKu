@@ -60,10 +60,14 @@ public class CLogin {
     private void changeScene(ActionEvent event, String fxmlPath, String username) throws Exception {
         FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlPath));
         Parent root = loader.load();
-        // Jika ke VOpsiWorkout, set username
         if (fxmlPath.contains("VOpsiWorkout") && username != null) {
             controller.COpsiWorkout ctrl = loader.getController();
             ctrl.setCurrentUsername(username);
+        }
+        // Jika ke HUtama, set username & password
+        if (fxmlPath.contains("HUtama") && username != null) {
+            controller.CUtama ctrl = loader.getController();
+            ctrl.setUser(username, passwordField.getText());
         }
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(new Scene(root));

@@ -5,7 +5,6 @@ import javafx.scene.control.Button;
 import javafx.event.ActionEvent;
 import java.util.ArrayList;
 import java.util.List;
-import model.UserDataStore;
 import model.WorkoutDataStore;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;

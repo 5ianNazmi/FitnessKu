@@ -17,6 +17,16 @@ public class COpsiNotif {
     private ComboBox<String> minuteCombo;
     @FXML
     private Button saveBtn;
+    @FXML
+    private javafx.scene.control.Label savedLabel;
+
+    private String username = "favian";
+    private String password = "vian";
+
+    public void setUser(String username, String password) {
+        this.username = username;
+        this.password = password;
+    }
 
     @FXML
     public void initialize() {
@@ -31,14 +41,44 @@ public class COpsiNotif {
         // Default: sembunyikan pengaturan waktu
         timeBox.setVisible(false);
         timeBox.setManaged(false);
+
+        // Hide saved label by default
+        if (savedLabel != null) {
+            savedLabel.setVisible(false);
+            savedLabel.setManaged(false);
+        }
+
+        // Load data notif user jika ada
+        model.UserDataStore.User user = model.UserDataStore.loginUser(username, password);
+        if (user != null) {
+            notifCheckBox.setSelected(user.notifEnabled);
+            if (user.notifEnabled) {
+                timeBox.setVisible(true);
+                timeBox.setManaged(true);
+                hourCombo.setValue(user.notifHour);
+                minuteCombo.setValue(user.notifMinute);
+            }
+        }
     }
 
     @FXML
     private void handleSave() {
-        if (notifCheckBox.isSelected()) {
-            String jam = hourCombo.getValue();
-            String menit = minuteCombo.getValue();
-            // Simpan waktu notif (implementasi sesuai kebutuhan)
+        boolean enabled = notifCheckBox.isSelected();
+        String jam = hourCombo.getValue() != null ? hourCombo.getValue() : "";
+        String menit = minuteCombo.getValue() != null ? minuteCombo.getValue() : "";
+        model.UserDataStore.updateUserNotif(username, enabled, jam, menit);
+        // Tampilkan pesan sukses
+        if (savedLabel != null) {
+            savedLabel.setVisible(true);
+            savedLabel.setManaged(true);
+            // Sembunyikan setelah 2 detik
+            new Thread(() -> {
+                try { Thread.sleep(2000); } catch (InterruptedException e) {}
+                javafx.application.Platform.runLater(() -> {
+                    savedLabel.setVisible(false);
+                    savedLabel.setManaged(false);
+                });
+            }).start();
         }
     }
 }

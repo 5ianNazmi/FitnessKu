@@ -20,7 +20,8 @@
                 <ComboBox fx:id="hourCombo" promptText="Jam" />
                 <ComboBox fx:id="minuteCombo" promptText="Menit" />
             </HBox>
-            <Button fx:id="saveBtn" styleClass="notif-save-btn" text="Simpan" />
+            <Button fx:id="saveBtn" styleClass="notif-save-btn" text="Simpan" onAction="#handleSave" />
         </VBox>
+        <Label fx:id="savedLabel" managed="false" styleClass="notif-label" text="Tersimpan!" visible="false" />
     </VBox>
 </AnchorPane>

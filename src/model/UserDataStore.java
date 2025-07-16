@@ -20,6 +20,9 @@ public class UserDataStore {
         public int poin = 0;
         public int level = 1;
         public int progress = 0;
+        public boolean notifEnabled = false;
+        public String notifHour = "";
+        public String notifMinute = "";
     }
 
     // Load all users from XML
@@ -45,6 +48,9 @@ public class UserDataStore {
                 u.poin = parseIntSafe(getTagValue(e, "poin"));
                 u.level = parseIntSafe(getTagValue(e, "level"));
                 u.progress = parseIntSafe(getTagValue(e, "progress"));
+                u.notifEnabled = Boolean.parseBoolean(getTagValue(e, "notifEnabled"));
+                u.notifHour = getTagValue(e, "notifHour");
+                u.notifMinute = getTagValue(e, "notifMinute");
                 users.add(u);
             }
         } catch (Exception ex) {
@@ -74,6 +80,9 @@ public class UserDataStore {
                 appendChild(doc, userElem, "poin", String.valueOf(u.poin));
                 appendChild(doc, userElem, "level", String.valueOf(u.level));
                 appendChild(doc, userElem, "progress", String.valueOf(u.progress));
+                appendChild(doc, userElem, "notifEnabled", String.valueOf(u.notifEnabled));
+                appendChild(doc, userElem, "notifHour", u.notifHour);
+                appendChild(doc, userElem, "notifMinute", u.notifMinute);
                 root.appendChild(userElem);
             }
             TransformerFactory tf = TransformerFactory.newInstance();
@@ -95,6 +104,9 @@ public class UserDataStore {
         newUser.username = username;
         newUser.email = email;
         newUser.password = password;
+        newUser.notifEnabled = false;
+        newUser.notifHour = "";
+        newUser.notifMinute = "";
         users.add(newUser);
         saveUsers(users);
         return true;
@@ -117,6 +129,21 @@ public class UserDataStore {
         for (User u : users) {
             if (u.username.equals(username)) {
                 u.workouts = new ArrayList<>(workouts);
+                break;
+            }
+        }
+        saveUsers(users);
+
+    }
+
+    // Update notif setting untuk user tertentu
+    public static void updateUserNotif(String username, boolean enabled, String hour, String minute) {
+        List<User> users = loadUsers();
+        for (User u : users) {
+            if (u.username.equals(username)) {
+                u.notifEnabled = enabled;
+                u.notifHour = hour;
+                u.notifMinute = minute;
                 break;
             }
         }
