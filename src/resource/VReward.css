@@ -1,0 +1,96 @@
+.root, .anchor-pane {
+    -fx-background-color: #000000;
+    -fx-font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+.title-label {
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #ffffff;
+    -fx-padding: 0 0 0 12;
+}
+
+.back-btn, .menu-btn, .cart-btn, .favorite-btn {
+    -fx-background-color: transparent;
+    -fx-min-width: 32;
+    -fx-min-height: 32;
+    -fx-cursor: hand;
+}
+
+.image-bg {
+    -fx-background-color: #181818;
+    -fx-background-radius: 18;
+}
+
+.product-image {
+    /* Set image di FXML atau controller */
+}
+
+.product-title {
+    -fx-font-size: 17px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #ffffff;
+}
+
+.price-chip {
+    -fx-background-color: #26b062;
+    -fx-background-radius: 12;
+    -fx-padding: 2 12 2 8;
+}
+
+.price-label {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #ffffff;
+}
+
+.icon-coin {
+    /* Set image di FXML atau controller */
+}
+
+.poin-label {
+    -fx-font-size: 13px;
+    -fx-text-fill: #888;
+}
+
+.user-poin {
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #ffffff;
+}
+
+.desc-title {
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #ffffff;
+}
+
+.desc-content {
+    -fx-font-size: 13px;
+    -fx-text-fill: #444;
+}
+
+.bottom-bar {
+    -fx-background-color: #181818;
+    -fx-padding: 8 16 8 16;
+    -fx-border-color: #26b062;
+    -fx-border-width: 1 0 0 0;
+}
+
+.tukar-btn {
+    -fx-background-color: #26b062;
+    -fx-border-color: #26b062;
+    -fx-border-radius: 22;
+    -fx-background-radius: 22;
+    -fx-text-fill: #ffffff;
+    -fx-font-weight: bold;
+    -fx-font-size: 15px;
+}
+
+.keranjang-btn {
+    -fx-background-color: #2196f3;
+    -fx-background-radius: 22;
+    -fx-text-fill: #fff;
+    -fx-font-weight: bold;
+    -fx-font-size: 15px;
+}

@@ -39,12 +39,13 @@
                 </HBox>
                 <HBox spacing="18.0">
                     <children>
-                        <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="181.0" prefWidth="222.0" styleClass="card">
+                        <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="181.0" prefWidth="222.0" styleClass="card" onMouseClicked="#handleWorkoutCard">
+            
                             <children>
                                 <Text fill="#00ff6a" layoutX="24.0" layoutY="46.0" styleClass="card-title" text="Workout" />
                             </children>
                         </AnchorPane>
-                        <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="181.0" prefWidth="140.0" styleClass="card">
+                        <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="181.0" prefWidth="140.0" styleClass="card" onMouseClicked="#handleTantanganCard">
                             <children>
                                 <Text fill="#00ff6a" layoutX="27.0" layoutY="47.0" styleClass="card-title" text="Tantangan" />
                             </children>

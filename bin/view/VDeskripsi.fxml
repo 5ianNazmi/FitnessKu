@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.text.TextFlow?>
+<?import javafx.scene.web.WebView?>
+
+<AnchorPane prefHeight="600.0" prefWidth="400.0" stylesheets="@../resource/VDeskripsi.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CDeskripsi">
+    <children>
+        <VBox alignment="TOP_CENTER" prefHeight="600.0" prefWidth="400.0" spacing="16.0">
+            <children>
+                <Label styleClass="title-label" text="ABDOMINAL CRUNCHES" />
+                <Label style="-fx-text-fill:#43A047; -fx-font-size:16px; -fx-font-weight:bold;" text="VIDEO" />
+                <HBox alignment="CENTER" spacing="0.0">
+                    <children>
+                        <WebView fx:id="webView" prefWidth="320.0" prefHeight="180.0" />
+                    </children>
+                </HBox>
+                <Label style="-fx-text-fill:#43A047; -fx-font-size:16px; -fx-font-weight:bold;" text="ULANGI" />
+                <HBox alignment="CENTER_LEFT" spacing="12.0">
+                    <children>
+                        <Button styleClass="button" text="-" onAction="#handleRepeatMinus" />
+                        <Label fx:id="repeatLabel" style="-fx-text-fill:#fff; -fx-font-size:18px; -fx-font-weight:bold;" text="10" />
+                        <Button styleClass="button" text="+" onAction="#handleRepeatPlus" />
+                    </children>
+                </HBox>
+                <Label style="-fx-text-fill:#43A047; -fx-font-size:16px; -fx-font-weight:bold;" text="INSTRUKSI" />
+                <TextFlow prefWidth="320.0" styleClass="text-flow">
+                    <children>
+                        <Text styleClass="text" text="Berbaringlah telentang dengan lutut ditekuk dan telapak kaki menempel di lantai. Letakkan tangan di belakang kepala, angkat tubuh bagian atas ke arah lutut, lalu turunkan kembali. Ulangi gerakan ini sesuai durasi. Latihan ini efektif untuk melatih otot perut bagian atas." />
+                    </children>
+                </TextFlow>
+                <Button prefWidth="320.0" styleClass="close-button" text="Tutup" />
+            </children>
+        </VBox>
+    </children>
+</AnchorPane>

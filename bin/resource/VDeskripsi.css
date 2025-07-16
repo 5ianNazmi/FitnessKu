@@ -1,0 +1,66 @@
+/* Root background */
+.root {
+    -fx-background-color: #000000;
+}
+
+/* Title label */
+.title-label {
+    -fx-text-fill: #fff;
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+    -fx-padding: 0 0 8 0;
+}
+
+/* Tab bar buttons */
+.button {
+    -fx-background-radius: 8px;
+    -fx-background-color: #232323;
+    -fx-text-fill: #fff;
+    -fx-font-size: 16px;
+    -fx-font-weight: normal;
+    -fx-padding: 8 24;
+    -fx-cursor: hand;
+}
+.button-green {
+    -fx-background-color: #26b062;
+    -fx-text-fill: #fff;
+    -fx-font-weight: bold;
+}
+.button:focused, .button:pressed, .button-green:focused, .button-green:pressed {
+    -fx-background-color: #388E3C;
+}
+
+/* Repeat label */
+.repeat-label {
+    -fx-text-fill: #26b062;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+}
+
+/* Instruction label */
+.instruction-label {
+    -fx-text-fill: #26b062;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-padding: 8 0 0 0;
+}
+
+/* TextFlow and Text */
+.text-flow {
+    -fx-background-color: transparent;
+    -fx-padding: 0 0 8 0;
+}
+.text {
+    -fx-fill: #fff;
+    -fx-font-size: 14px;
+}
+
+/* Close button */
+.close-button {
+    -fx-background-color: #26b062;
+    -fx-text-fill: #fff;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 8px;
+    -fx-padding: 10 0 10 0;
+}

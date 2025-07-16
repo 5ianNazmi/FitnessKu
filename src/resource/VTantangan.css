@@ -1,0 +1,39 @@
+/* CSS Tantangan - tema dark hijau modern */
+
+.tantangan-title {
+    -fx-font-size: 28px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #43A047;
+    -fx-padding: 0 0 18px 0;
+}
+
+.tantangan-workout {
+    -fx-font-size: 22px;
+    -fx-text-fill: #fff;
+    -fx-font-weight: bold;
+    -fx-padding: 12px 0 24px 0;
+}
+
+.tantangan-btn {
+    -fx-background-color: #23272F;
+    -fx-text-fill: #43A047;
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 14px;
+    -fx-border-color: #43A047;
+    -fx-border-width: 2px;
+    -fx-border-radius: 14px;
+    -fx-cursor: hand;
+    -fx-pref-width: 180px;
+    -fx-pref-height: 48px;
+    -fx-effect: dropshadow(gaussian, #43A047, 4, 0.2, 0, 1);
+    -fx-padding: 8px 0 8px 0;
+}
+.tantangan-btn:hover {
+    -fx-background-color: #43A047;
+    -fx-text-fill: #fff;
+}
+
+AnchorPane {
+    -fx-background-color: #111;
+}

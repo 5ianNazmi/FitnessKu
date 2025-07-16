@@ -1,0 +1,46 @@
+.root, .anchor-pane {
+    -fx-background-color: #000000;
+}
+
+.input-group {
+    -fx-background-color: #181A20;
+    -fx-border-color: #181A20;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+    -fx-padding: 6 10 6 10;
+    -fx-alignment: center-left;
+}
+
+.input-field {
+    -fx-background-color: transparent;
+    -fx-border-width: 0;
+    -fx-font-size: 13px;
+    -fx-text-fill: #ffffff;
+    -fx-prompt-text-fill: #b0b0b0;
+    -fx-pref-width: 220;
+}
+
+.create-btn {
+    -fx-background-color: #26b062;
+    -fx-background-radius: 8;
+    -fx-text-fill: #fff;
+    -fx-font-weight: bold;
+    -fx-font-size: 15px;
+    -fx-padding: 6 0 6 0;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, #26b062, 4, 0.2, 0, 0);
+    -fx-border-width: 0;
+}
+
+.icon-user {
+    /* Ganti dengan url gambar user jika ada */
+}
+.icon-email {
+    /* Ganti dengan url gambar email jika ada */
+}
+.icon-phone {
+    /* Ganti dengan url gambar phone jika ada */
+}
+.icon-password {
+    /* Ganti dengan url gambar password jika ada */
+}

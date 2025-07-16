@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+
+<AnchorPane prefHeight="600.0" prefWidth="400.0" stylesheets="@../resource/VIsiAlamat.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+     <!-- Full Name -->
+     <HBox layoutX="65.0" layoutY="61.0" spacing="8" styleClass="input-group">
+         <ImageView fitHeight="20" fitWidth="20" styleClass="icon-user" />
+         <TextField promptText="Full Name" styleClass="input-field" text="Nama Lengkap" />
+     </HBox>
+     <!-- Email -->
+     <HBox layoutX="65.0" layoutY="117.0" spacing="8" styleClass="input-group">
+         <ImageView fitHeight="20" fitWidth="20" styleClass="icon-email" />
+         <TextField promptText="Email" styleClass="input-field" text="Email" />
+     </HBox>
+     <!-- Phone Number -->
+     <HBox layoutX="65.0" layoutY="173.0" spacing="8" styleClass="input-group">
+         <ImageView fitHeight="20" fitWidth="20" styleClass="icon-phone" />
+         <TextField promptText="Phone Number" styleClass="input-field" text="Nomor Telepon" />
+     </HBox>
+     <!-- Password -->
+     <HBox layoutX="65.0" layoutY="229.0" spacing="8" styleClass="input-group">
+         <ImageView fitHeight="20" fitWidth="20" styleClass="icon-password" />
+      <TextField promptText="Phone Number" styleClass="input-field" text="Provinsi" />
+     </HBox>
+     <!-- Confirm Password -->
+     <HBox layoutX="65.0" layoutY="285.0" spacing="8" styleClass="input-group">
+         <ImageView fitHeight="20" fitWidth="20" styleClass="icon-password" />
+      <TextField promptText="Phone Number" styleClass="input-field" text="Kota/Kabupaten" />
+     </HBox>
+   <HBox layoutX="65.0" layoutY="341.0" spacing="8" styleClass="input-group">
+      <children>
+         <ImageView fitHeight="20" fitWidth="20" styleClass="icon-password" />
+         <TextField promptText="Phone Number" styleClass="input-field" text="Kecamatan" />
+      </children>
+   </HBox>
+   <HBox layoutX="65.0" layoutY="397.0" spacing="8" styleClass="input-group">
+      <children>
+         <ImageView fitHeight="20" fitWidth="20" styleClass="icon-password" />
+         <TextField promptText="Phone Number" styleClass="input-field" text="Kode Pos" />
+      </children>
+   </HBox>
+   <HBox layoutX="65.0" layoutY="453.0" spacing="8" styleClass="input-group">
+      <children>
+         <ImageView fitHeight="20" fitWidth="20" styleClass="icon-password" />
+         <TextField promptText="Phone Number" styleClass="input-field" text="Alamat Lengkap" />
+      </children>
+   </HBox>
+     <!-- Create Button -->
+     <Button layoutX="111.0" layoutY="523.0" prefHeight="44.0" prefWidth="170.0" styleClass="create-btn" text="KONFIRMASI" />
+   <ImageView fitHeight="23.0" fitWidth="38.0" layoutX="20.0" layoutY="19.0">
+      <image>
+         <Image url="@../../../Screenshot_2025-07-15_222001-removebg-preview.png" />
+      </image>
+   </ImageView>
+</AnchorPane>

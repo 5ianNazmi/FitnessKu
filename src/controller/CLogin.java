@@ -31,7 +31,7 @@ public class CLogin {
                 // Cek workout di Workout.xml
                 java.util.List<String> workouts = WorkoutDataStore.getUserWorkouts(username);
                 if (workouts != null && !workouts.isEmpty()) {
-                    changeScene(event, "/view/HUtama.fxml"); // ke halaman utama
+                    changeScene(event, "/view/HUtama.fxml", username); // ke halaman utama
                 } else {
                     changeScene(event, "/view/VOpsiWorkout.fxml", username); // ke opsi workout
                 }
