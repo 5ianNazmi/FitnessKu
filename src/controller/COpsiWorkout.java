@@ -49,9 +49,13 @@ public class COpsiWorkout {
         if (currentUsername != null && !selectedWorkouts.isEmpty()) {
             WorkoutDataStore.setUserWorkouts(currentUsername, selectedWorkouts);
         }
-        // Pindah ke halaman utama
+        // Pindah ke halaman utama dan passing user ke CUtama
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("/view/HUtama.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/HUtama.fxml"));
+            Parent root = loader.load();
+            controller.CUtama ctrl = loader.getController();
+            // Passing username dan password kosong (atau bisa ambil dari login jika ingin)
+            ctrl.setUser(currentUsername, "");
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             stage.setScene(new Scene(root));
             stage.show();

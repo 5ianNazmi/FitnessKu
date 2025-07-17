@@ -11,7 +11,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="601.0" prefWidth="401.0" stylesheets="@../resource/VPoin.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FitnessController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="601.0" prefWidth="401.0" stylesheets="@../resource/VPoin.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CPoin">
      <!-- Profile & Icon Row -->
      <HBox alignment="CENTER_LEFT" layoutX="20.0" layoutY="24.0" spacing="12">
          <ImageView fitHeight="44" fitWidth="44" styleClass="profile-pic" />
@@ -42,7 +42,7 @@
       </children>
    </Pane>
    <Label layoutX="332.0" layoutY="126.0" styleClass="header-title" text="Level" />
-   <Label layoutX="332.0" layoutY="150.0" styleClass="header-amount" text="50" />
+   <!-- Hapus label duplikat, gunakan hanya fx:id="poinLabel" -->
    <ImageView fitHeight="145.0" fitWidth="158.0" layoutX="140.0" layoutY="90.0">
       <image>
          <Image url="@../extra/816299f003410331c4919f9d9ee9d2d3-removebg-preview.png" />
@@ -68,7 +68,7 @@
       </children></Pane>
      <!-- Card 2 -->
      <Pane layoutX="223.1999969482422" layoutY="299.3999938964844" prefHeight="138.0" prefWidth="140.0" styleClass="reward-card">
-         <Label layoutX="62.0" layoutY="96.0" styleClass="reward-desc" text="2.500" />
+         <Label layoutX="62.0" layoutY="95.0" styleClass="reward-desc" text="250" />
       <ImageView fitHeight="84.0" fitWidth="117.0" layoutX="12.0" layoutY="5.0">
          <image>
             <Image url="@../extra/Screenshot_2025-07-10_105132-removebg-preview.png" />
@@ -79,7 +79,7 @@
      <!-- Card 3 -->
      <Pane layoutX="38.0" layoutY="452.6000061035156" prefHeight="131.0" prefWidth="140" styleClass="reward-card">
          <ImageView fitHeight="36" fitWidth="36" layoutX="52" layoutY="12" styleClass="icon-spotify" />
-         <Label layoutX="54.0" layoutY="93.0" styleClass="reward-desc" text="100.000" />
+         <Label layoutX="59.0" layoutY="93.0" styleClass="reward-desc" text="10.000" />
       <ImageView fitHeight="60.0" fitWidth="53.0" layoutX="47.0" layoutY="27.0">
          <image>
             <Image url="@../extra/Screenshot_2025-07-10_110416-removebg-preview.png" />
@@ -90,7 +90,7 @@
      <!-- Card 4 -->
      <Pane layoutX="223.0" layoutY="454.0" prefHeight="130.0" prefWidth="140" styleClass="reward-card">
          <ImageView fitHeight="36" fitWidth="36" layoutX="52" layoutY="12" styleClass="icon-coin" />
-         <Label layoutX="57.0" layoutY="92.0" styleClass="reward-desc" text="10.000" />
+         <Label layoutX="64.0" layoutY="93.0" styleClass="reward-desc" text="750" />
       <Label layoutX="10.0" layoutY="6.0" styleClass="reward-desc" text="SEPATU OLAHRAGA" />
       <ImageView fitHeight="54.0" fitWidth="100.0" layoutX="22.0" layoutY="32.0">
          <image>
@@ -101,7 +101,7 @@
    <Pane layoutX="38.0" layoutY="296.0" prefHeight="138.0" prefWidth="140.0" styleClass="reward-card">
       <children>
          <ImageView fitHeight="36" fitWidth="36" layoutX="52" layoutY="12" styleClass="icon-apple" />
-         <Label layoutX="60.0" layoutY="100.0" styleClass="reward-desc" text="5.000" textAlignment="CENTER" />
+         <Label layoutX="63.0" layoutY="97.0" styleClass="reward-desc" text="500" textAlignment="CENTER" />
          <Button layoutX="4.0" layoutY="117.0" prefHeight="19.0" prefWidth="130.0" styleClass="reward-btn" text="TUKAR HADIAH" />
          <Label layoutX="2.0" layoutY="8.0" styleClass="reward-desc" text=" CORKCICLE" />
          <Button layoutX="190.0" layoutY="117.0" prefHeight="19.0" prefWidth="130.0" styleClass="reward-btn" text="TUKAR HADIAH" />
@@ -114,10 +114,7 @@
          </ImageView>
       </children>
    </Pane>
-   <Label layoutX="20.0" layoutY="150.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="32.0" prefWidth="107.0" styleClass="header-amount" text="10.000">
-      <font>
-         <Font size="9.0" />
-      </font></Label>
+   <Label layoutX="332.0" layoutY="150.0" styleClass="header-amount" text="0" />
 <!-- Progress Bar Custom -->
 <Pane layoutX="16.0" layoutY="241.0" prefHeight="32.0" prefWidth="246.0" styleClass="progress-bar-bg">
     <Pane layoutX="4.0" layoutY="6.0" prefHeight="19.0" prefWidth="107.0" styleClass="progress-bar-fill" />
@@ -129,9 +126,10 @@
          <Image url="@../extra/Screenshot_2025-07-15_214223-removebg-preview.png" />
       </image>
    </ImageView>
-   <ImageView fitHeight="23.0" fitWidth="38.0" layoutX="11.0" layoutY="13.0">
-      <image>
-         <Image url="@../extra/Screenshot_2025-07-15_222001-removebg-preview.png" />
-      </image>
-   </ImageView>
+<ImageView fx:id="backButton" fitHeight="23.0" fitWidth="38.0" layoutX="16.0" layoutY="16.0" onMouseClicked="#handleBackButton">
+    <image>
+        <Image url="@../extra/Screenshot_2025-07-15_222001-removebg-preview.png" />
+    </image>
+</ImageView>
+   <Label fx:id="poinLabel" layoutX="28.0" layoutY="150.0" prefHeight="39.0" prefWidth="60.0" styleClass="header-amount" text="0" />
 </AnchorPane>

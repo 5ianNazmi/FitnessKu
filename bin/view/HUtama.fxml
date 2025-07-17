@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
@@ -18,19 +19,19 @@
             <children>
                 <HBox spacing="18.0">
                     <children>
-                        <AnchorPane prefHeight="80.0" prefWidth="140.0" styleClass="card">
+                        <AnchorPane fx:id="cardPoin" prefHeight="80.0" prefWidth="140.0" styleClass="card" onMouseClicked="#handlePoinCard">
                             <children>
                                 <Text fill="#00ff6a" layoutX="14.0" layoutY="30.0" styleClass="card-title" text="Poin" />
-                                <Text fill="WHITE" layoutX="10.0" layoutY="55.0" styleClass="card-content" text="1000" />
+                        <Label fx:id="poinCardLabel" layoutX="14.0" layoutY="34.0" styleClass="card-content" text="Label" />
                             </children>
                         </AnchorPane>
-                        <AnchorPane prefHeight="80.0" prefWidth="140.0" styleClass="card">
+                        <AnchorPane fx:id="cardLeaderboard" prefHeight="80.0" prefWidth="140.0" styleClass="card" onMouseClicked="#handleLeaderboardCard">
                             <children>
                                 <Text fill="#00ff6a" layoutX="10.0" layoutY="28.0" styleClass="card-title" text="Leaderboard" />
                                 <Text fill="WHITE" layoutX="10.0" layoutY="55.0" styleClass="card-content" text="Ranking #" />
                             </children>
                         </AnchorPane>
-                  <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="95.0" prefWidth="85.0" styleClass="card" onMouseClicked="#handleNotifCard">
+                  <AnchorPane fx:id="cardNotif" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#handleNotifCard" prefHeight="95.0" prefWidth="85.0" styleClass="card">
                      <children>
                         <Text fill="#00ff6a" layoutX="22.0" layoutY="31.0" styleClass="card-title" text="Notif" />
                      </children>
@@ -39,20 +40,20 @@
                 </HBox>
                 <HBox spacing="18.0">
                     <children>
-                        <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="181.0" prefWidth="222.0" styleClass="card" onMouseClicked="#handleWorkoutCard">
+                        <AnchorPane fx:id="cardWorkout" maxHeight="-Infinity" maxWidth="-Infinity" onMouseClicked="#handleWorkoutCard" prefHeight="181.0" prefWidth="222.0" styleClass="card">
             
                             <children>
                                 <Text fill="#00ff6a" layoutX="24.0" layoutY="46.0" styleClass="card-title" text="Workout" />
                             </children>
                         </AnchorPane>
-                        <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="181.0" prefWidth="140.0" styleClass="card" onMouseClicked="#handleTantanganCard">
+                        <AnchorPane fx:id="cardTantangan" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#handleTantanganCard" prefHeight="181.0" prefWidth="140.0" styleClass="card">
                             <children>
                                 <Text fill="#00ff6a" layoutX="27.0" layoutY="47.0" styleClass="card-title" text="Tantangan" />
                             </children>
                         </AnchorPane>
                     </children>
                 </HBox>
-                <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="92.0" prefWidth="383.0" styleClass="card">
+                <AnchorPane fx:id="cardProgress" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="92.0" prefWidth="383.0" styleClass="card" onMouseClicked="#handleProgressCard">
                     <children>
                         <Text fill="#00ff6a" layoutX="154.0" layoutY="51.0" styleClass="card-title" text="Progress" />
                     </children>

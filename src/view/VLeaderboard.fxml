@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Circle?>
 
-<AnchorPane prefHeight="600" prefWidth="400" styleClass="root-bg" stylesheets="@../resource/VLeaderboard.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="600" prefWidth="400" styleClass="root-bg" stylesheets="@../resource/VLeaderboard.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CLeaderboard">
     <Button fx:id="backButton" layoutX="12" layoutY="16" styleClass="back-btn">
         <graphic>
             <ImageView fitHeight="24.0" fitWidth="40.0" pickOnBounds="true" styleClass="back-arrow-icon">
@@ -41,4 +41,9 @@
             </columns>
         </TableView>
     </VBox>
+   <ImageView fitHeight="23.0" fitWidth="38.0" layoutX="37.0" layoutY="39.0" onMouseClicked="#handleBackButton">
+      <image>
+         <Image url="@../extra/Screenshot_2025-07-15_222001-removebg-preview.png" />
+      </image>
+   </ImageView>
 </AnchorPane>

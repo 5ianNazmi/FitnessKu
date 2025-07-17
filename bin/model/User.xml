@@ -4,7 +4,11 @@
         <username>favian</username>
         <email>favian@gmail.com</email>
         <password>vian</password>
-        <poin>0</poin>
+        <workouts>
+            <workout>Arms</workout>
+            <workout>Chest</workout>
+        </workouts>
+        <poin>50</poin>
         <level>1</level>
         <progress>0</progress>
         <notifEnabled>true</notifEnabled>
@@ -15,6 +19,43 @@
         <username>vian</username>
         <email>vian@gmail.com</email>
         <password>favian</password>
+        <workouts/>
+        <poin>0</poin>
+        <level>1</level>
+        <progress>0</progress>
+        <notifEnabled>false</notifEnabled>
+        <notifHour/>
+        <notifMinute/>
+    </user>
+    <user>
+        <username>rido</username>
+        <email>rido@gmail.com</email>
+        <password>rido</password>
+        <workouts/>
+        <poin>0</poin>
+        <level>1</level>
+        <progress>0</progress>
+        <notifEnabled>false</notifEnabled>
+        <notifHour/>
+        <notifMinute/>
+    </user>
+    <user>
+        <username>pandu</username>
+        <email>pandu@gmail.com</email>
+        <password>pandu</password>
+        <workouts/>
+        <poin>0</poin>
+        <level>1</level>
+        <progress>0</progress>
+        <notifEnabled>false</notifEnabled>
+        <notifHour/>
+        <notifMinute/>
+    </user>
+    <user>
+        <username>fian</username>
+        <email>fian@gmail.com</email>
+        <password>fian</password>
+        <workouts/>
         <poin>0</poin>
         <level>1</level>
         <progress>0</progress>

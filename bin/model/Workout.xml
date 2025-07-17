@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <workouts>
-                
+                            
+    
+    
+    
     
     
     <user username="favian">
-                                
+                                                        
         
                 
         
@@ -13,17 +16,53 @@
         
         
     
+        
+        
+        
         <workout>Arms</workout>
+                                
+        
+        
         <workout>Chest</workout>
+                            
+    
+    
     </user>
-                
+                            
+    
+    
+    
     
     
     <!-- Tambahkan user lain dengan format serupa -->
-            
+                        
+    
+    
+    
     
     
     <user username="vian">
+                                                
+        
+        
+        
+        
+        <workout>Full Body</workout>
+                                            
+    
+    
+    
+    
+    </user>
+                    
+
+
+    
+    
+    <user username="rido">
+                        
+        
+        <workout>Arms</workout>
                         
         
         <workout>Full Body</workout>
@@ -31,5 +70,17 @@
     
     </user>
         
-
+    
+    <user username="pandu">
+                
+        <workout>Legs</workout>
+                
+        <workout>Abs</workout>
+            
+    </user>
+    
+    <user username="fian">
+        <workout>Chest</workout>
+        <workout>Full Body</workout>
+    </user>
 </workouts>

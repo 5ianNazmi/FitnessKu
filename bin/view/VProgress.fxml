@@ -10,16 +10,7 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane prefHeight="600" prefWidth="400" styleClass="progress-root" stylesheets="@../resource/VProgress.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
-    <Button fx:id="backButton" layoutX="16.0" layoutY="16" prefWidth="46.0" styleClass="back-btn">
-        <graphic>
-            <ImageView fitHeight="24.0" fitWidth="40.0" pickOnBounds="true" styleClass="back-arrow-icon">
-                <image>
-                    <Image url="@../../../../../Pictures/Tombol%20BACK.png" />
-                </image>
-            </ImageView>
-        </graphic>
-    </Button>
+<AnchorPane prefHeight="600" prefWidth="400" styleClass="progress-root" stylesheets="@../resource/VProgress.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CProgress">
     <Pane />
     <ImageView fitHeight="24" fitWidth="24" layoutY="16.0" styleClass="header-fire" />
 
@@ -98,4 +89,9 @@
             </VBox>
         </HBox>
     </VBox>
+   <ImageView fitHeight="23.0" fitWidth="38.0" layoutX="21.0" layoutY="23.0" onMouseClicked="#handleBackButton">
+      <image>
+         <Image url="@../extra/Screenshot_2025-07-15_222001-removebg-preview.png" />
+      </image>
+   </ImageView>
 </AnchorPane>
