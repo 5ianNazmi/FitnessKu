@@ -1,86 +1,107 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <workouts>
-                            
-    
-    
-    
-    
-    
-    <user username="favian">
-                                                        
-        
-                
-        
-            
-    
-        
-        
-    
-        
-        
-        
-        <workout>Arms</workout>
-                                
-        
-        
-        <workout>Chest</workout>
-                            
-    
-    
-    </user>
-                            
-    
-    
-    
-    
-    
-    <!-- Tambahkan user lain dengan format serupa -->
-                        
-    
-    
-    
-    
-    
-    <user username="vian">
-                                                
-        
-        
-        
-        
-        <workout>Full Body</workout>
-                                            
-    
-    
-    
-    
-    </user>
-                    
-
-
-    
-    
-    <user username="rido">
-                        
-        
-        <workout>Arms</workout>
-                        
-        
-        <workout>Full Body</workout>
-                    
-    
-    </user>
-        
-    
-    <user username="pandu">
-                
-        <workout>Legs</workout>
-                
-        <workout>Abs</workout>
-            
-    </user>
-    
-    <user username="fian">
-        <workout>Chest</workout>
-        <workout>Full Body</workout>
-    </user>
+<option name="Arms">
+    <exercise>
+        <name>Arm Circle</name>
+        <video>https://youtu.be/Lha66p0ZXUc?si=QL2i2F5GqVvHA6aN</video>
+        <description>Berdiri tegak dengan kedua lengan direntangkan ke samping. Putar lengan membentuk lingkaran kecil searah jarum jam, lalu berlawanan arah. Ulangi gerakan sesuai repetisi.</description>
+        <repeat>15</repeat>
+    </exercise>
+    <exercise>
+        <name>Diagonal Plank</name>
+        <video>https://youtu.be/OGfFtF-dhrk?si=SbY0RPb30jLZxXgF</video>
+        <description>Mulai dengan posisi plank, angkat satu tangan dan kaki berlawanan secara diagonal. Kembali ke posisi awal dan ulangi dengan sisi sebaliknya.</description>
+        <repeat>12</repeat>
+    </exercise>
+    <exercise>
+        <name>Inchworms</name>
+        <video>https://youtu.be/ZY2ji_Ho0dA?si=SicpHLsFa0K9UWD8</video>
+        <description>Berdiri tegak, lalu bungkukkan badan dan letakkan tangan di lantai. Jalan tangan ke depan hingga posisi plank, lalu kembali ke posisi awal. Ulangi gerakan.</description>
+        <repeat>10</repeat>
+    </exercise>
+    <exercise>
+        <name>Leg Barbell Curl</name>
+        <video>https://youtu.be/3kZS8HVFquk?si=T8alp8dyaFGKJY</video>
+        <description>Berdiri tegak dengan barbell di kedua tangan. Tekuk siku dan angkat barbell ke arah bahu, lalu turunkan perlahan. Ulangi gerakan.</description>
+        <repeat>10</repeat>
+    </exercise>
+</option>
+<option name="Chest">
+    <exercise>
+        <name>Incline Push-Up</name>
+        <video>https://youtu.be/3WUUeM07i_Q?si=wueNmdz188JoNZ5r</video>
+        <description>Mulailah dengan posisi push up dengan tangan bertumpu pada permukaan yang lebih tinggi (misal kursi atau meja). Turunkan badan hingga dada hampir menyentuh permukaan, lalu dorong kembali ke posisi awal. Latihan ini cocok untuk pemula dan melatih otot dada serta lengan.</description>
+        <repeat>12</repeat>
+    </exercise>
+    <exercise>
+        <name>Push-Up</name>
+        <video>https://youtu.be/R08gYyypGto?si=_rfzMQ6jA7ukmOBI</video>
+        <description>Berbaringlah telungkup di tanah dengan lengan menopang tubuh Anda, jaga tubuh tetap lurus saat menaikkan dan menurunkan tubuh dengan lengan. Latihan ini melatih dada, bahu, tricep, punggung dan kaki.</description>
+        <repeat>15</repeat>
+    </exercise>
+    <exercise>
+        <name>Triceps Dips</name>
+        <video>https://youtu.be/JhX1nBnirNw?si=eQ_vWASSYmLiwJK</video>
+        <description>Duduk di tepi kursi atau bangku, letakkan tangan di samping pinggul. Geser tubuh ke depan dan turunkan badan dengan menekuk siku hingga membentuk sudut 90 derajat, lalu dorong tubuh kembali ke atas. Latihan ini melatih otot triceps dan bahu.</description>
+        <repeat>10</repeat>
+    </exercise>
+    <exercise>
+    <name>Knee Push-up</name>
+        <video>https://youtu.be/jWxvty2KROs?si=6mZbYrdDg0lKBFXE</video>
+        <description>Mulailah dengan posisi push up, namun lutut menyentuh lantai. Turunkan badan hingga dada hampir menyentuh lantai, lalu dorong kembali ke posisi awal. Latihan ini cocok untuk pemula dan melatih otot dada serta lengan.</description>
+        <repeat>12</repeat>
+    </exercise>
+</option>
+<option name="Abs">
+    <exercise>
+        <name>Abdominal Crunches</name>
+        <video>https://youtu.be/RUNrHkbP4Pc?si=0A9gNJRIeLj4Yo1</video>
+        <description>Berbaringlah telentang dengan lutut ditekuk dan telapak kaki menempel di lantai. Letakkan tangan di belakang kepala, angkat tubuh bagian atas ke arah lutut, lalu turunkan kembali. Ulangi gerakan ini sesuai durasi. Latihan ini efektif untuk melatih otot perut bagian atas.</description>
+        <repeat>15</repeat>
+    </exercise>
+    <exercise>
+        <name>Mountain Climber</name>
+        <video>https://youtu.be/wQq3ybaLZeA?si=P9w47FfEXtvPk9J</video>
+        <description>Mulailah dalam posisi push-up dengan tangan sejajar bahu dan tubuh lurus. Gerakkan lutut kanan ke arah dada, lalu kembali ke posisi awal dan lakukan dengan lutut kiri secara bergantian. Lakukan gerakan secepat dan seefisien mungkin. Latihan ini melatih otot perut, bahu, dan kardio.</description>
+        <repeat>20</repeat>
+    </exercise>
+    <exercise>
+        <name>Heel Touch</name>
+        <video>https://youtu.be/9bR-elyolBQ?si=QO1k4siwQOzWuANQ</video>
+        <description>Berbaringlah dengan lutut ditekuk dan telapak kaki menempel di lantai. Sentuhkan tangan kanan ke tumit kanan, lalu tangan kiri ke tumit kiri secara bergantian. Jaga otot perut tetap aktif selama gerakan. Latihan ini efektif untuk melatih otot perut samping.</description>
+        <repeat>20</repeat>
+    </exercise>
+    <exercise>
+        <name>Plank</name>
+        <video>https://youtu.be/Fcbw82ykBvY?si=8zmQgeByQFtEIe</video>
+        <description>Mulailah dengan posisi push-up, lalu tekuk siku dan tumpukan berat badan pada lengan bawah dan jari kaki. Jaga tubuh tetap lurus dari kepala hingga tumit. Tahan posisi ini sesuai durasi. Latihan ini efektif untuk melatih otot inti dan stabilitas tubuh.</description>
+        <repeat>30</repeat>
+    </exercise>
+</option>
+<option name="Legs">
+    <exercise>
+        <name>Side Hop</name>
+        <video>https://youtu.be/nYmUEJIBj3c?si=Np2SkYWlCGUCoTPW</video>
+        <description>Mulailah dengan berdiri tegak, lalu lompat ke samping kanan dan kiri secara bergantian dengan kedua kaki rapat. Pastikan lutut sedikit ditekuk saat mendarat dan jaga keseimbangan tubuh. Latihan ini melatih otot kaki dan meningkatkan kelincahan.</description>
+        <repeat>20</repeat>
+    </exercise>
+    <exercise>
+        <name>Backward Lunge</name>
+        <video>https://youtu.be/_LGpDtENZ5U?si=cw7QMHvkENKAohPO</video>
+        <description>Berdiri tegak, langkahkan satu kaki ke belakang dan turunkan tubuh hingga lutut membentuk sudut 90 derajat. Kembali ke posisi awal dan ulangi dengan kaki lainnya. Latihan ini melatih otot paha, bokong dan meningkatkan keseimbangan.</description>
+        <repeat>16</repeat>
+    </exercise>
+    <exercise>
+        <name>Side Lying Leg</name>
+        <video>https://youtu.be/VlwBJE1WtOQ?si=Xl4MFAEbS3FJrCA</video>
+        <description>Berbaring miring dengan satu tangan menopang kepala, angkat kaki atas ke atas lalu turunkan perlahan. Ulangi sesuai jumlah repetisi, lalu ganti sisi. Latihan ini melatih otot paha luar dan pinggul.</description>
+        <repeat>20</repeat>
+    </exercise>
+    <exercise>
+        <name>Donkey Kick</name>
+        <video>https://youtu.be/4ranVQDqlaU?si=ldy41xIpXN5BqnXP</video>
+        <description>Mulai dengan posisi merangkak, angkat satu kaki ke atas dengan lutut ditekuk 90 derajat, lalu turunkan kembali tanpa menyentuh lantai. Ulangi sesuai jumlah repetisi, lalu ganti kaki. Latihan ini melatih otot bokong dan paha belakang.</description>
+        <repeat>20</repeat>
+    </exercise>
+</option>
 </workouts>

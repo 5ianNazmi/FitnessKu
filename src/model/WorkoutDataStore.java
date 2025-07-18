@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class WorkoutDataStore {
-    private static final String FILE_PATH = "src/model/Workout.xml";
+    private static final String FILE_PATH = "c:/Users/favia/OneDrive/Documents/FitnessKu/src/model/Workout.xml";
 
     public static List<String> getUserWorkouts(String username) {
         List<String> workouts = new ArrayList<>();
@@ -86,5 +86,71 @@ public class WorkoutDataStore {
         } catch (Exception ex) {
             ex.printStackTrace();
         }
+    }
+        public static class Exercise {
+        public String name;
+        public String video;
+        public String description;
+        public int repeat;
+    }
+
+    public static List<Exercise> getExercisesByOption(String optionName) {
+        List<Exercise> exercises = new ArrayList<>();
+        boolean foundOption = false;
+        try {
+            File xmlFile = new File(FILE_PATH);
+            if (!xmlFile.exists()) {
+                // Coba path alternatif jika file tidak ditemukan
+                xmlFile = new File("./src/model/Workout.xml");
+                if (!xmlFile.exists()) {
+                    System.out.println("[DEBUG] Workout.xml tidak ditemukan di path: " + FILE_PATH + " atau ./src/model/Workout.xml");
+                    return exercises;
+                }
+            }
+            DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+            DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+            Document doc = dBuilder.parse(xmlFile);
+            NodeList optionNodes = doc.getElementsByTagName("option");
+            String target = optionName.trim().toLowerCase();
+            System.out.println("[DEBUG] Semua opsi workout yang ditemukan di XML:");
+            for (int i = 0; i < optionNodes.getLength(); i++) {
+                Element optionElem = (Element) optionNodes.item(i);
+                String optNameRaw = optionElem.getAttribute("name");
+                String optName = optNameRaw.trim().toLowerCase();
+                System.out.println("[DEBUG] - '" + optNameRaw + "' (trimmed: '" + optName + "')");
+                if (optName.equals(target)) {
+                    foundOption = true;
+                    NodeList exerciseNodes = optionElem.getElementsByTagName("exercise");
+                    for (int j = 0; j < exerciseNodes.getLength(); j++) {
+                        Element exElem = (Element) exerciseNodes.item(j);
+                        Exercise ex = new Exercise();
+                        ex.name = getTagValue(exElem, "name");
+                        ex.video = getTagValue(exElem, "video");
+                        ex.description = getTagValue(exElem, "description");
+                        try {
+                            ex.repeat = Integer.parseInt(getTagValue(exElem, "repeat"));
+                        } catch (Exception e) {
+                            ex.repeat = 10;
+                        }
+                        exercises.add(ex);
+                    }
+                    break;
+                }
+            }
+            if (!foundOption) {
+                System.out.println("[DEBUG] Opsi workout tidak ditemukan di Workout.xml: " + optionName);
+            }
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+        return exercises;
+    }
+
+    private static String getTagValue(Element elem, String tag) {
+        NodeList nl = elem.getElementsByTagName(tag);
+        if (nl.getLength() > 0) {
+            return nl.item(0).getTextContent();
+        }
+        return "";
     }
 }

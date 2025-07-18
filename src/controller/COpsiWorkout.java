@@ -5,7 +5,7 @@ import javafx.scene.control.Button;
 import javafx.event.ActionEvent;
 import java.util.ArrayList;
 import java.util.List;
-import model.WorkoutDataStore;
+import model.UserDataStore;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -13,6 +13,12 @@ import javafx.stage.Stage;
 import javafx.scene.Node;
 
 public class COpsiWorkout {
+    // Callback untuk notifikasi opsi workout berubah
+    private Runnable onOpsiChanged;
+
+    public void setOnOpsiChanged(Runnable callback) {
+        this.onOpsiChanged = callback;
+    }
     @FXML private Button btnFullBody;
     @FXML private Button btnChest;
     @FXML private Button btnAbs;
@@ -45,9 +51,13 @@ public class COpsiWorkout {
 
     @FXML
     private void handleNext(ActionEvent event) {
-        // Simpan workout ke Workout.xml
-        if (currentUsername != null && !selectedWorkouts.isEmpty()) {
-            WorkoutDataStore.setUserWorkouts(currentUsername, selectedWorkouts);
+        // Simpan workout ke User.xml (meskipun kosong, tetap update)
+        if (currentUsername != null) {
+            UserDataStore.updateUserWorkouts(currentUsername, selectedWorkouts);
+            // Panggil callback jika ada
+            if (onOpsiChanged != null) {
+                onOpsiChanged.run();
+            }
         }
         // Pindah ke halaman utama dan passing user ke CUtama
         try {

@@ -1,3 +1,24 @@
+/* Tombol Ganti Opsi */
+.ganti-opsi-btn {
+    -fx-background-color: #23272F;
+    -fx-text-fill: #43A047;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 14px;
+    -fx-border-color: #43A047;
+    -fx-border-width: 2px;
+    -fx-border-radius: 14px;
+    -fx-cursor: hand;
+    -fx-pref-width: 120px;
+    -fx-pref-height: 28px;
+    -fx-effect: dropshadow(gaussian, #43A047, 4, 0.2, 0, 1);
+    -fx-padding: 4px 0 4px 0;
+    -fx-transition: background-color 0.2s;
+}
+.ganti-opsi-btn:hover {
+    -fx-background-color: #43A047;
+    -fx-text-fill: #fff;
+}
 /* CSS Workout - tema dark hijau modern */
 
 .workout-title {

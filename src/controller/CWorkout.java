@@ -3,6 +3,29 @@ package controller;
 
 public class CWorkout {
     @javafx.fxml.FXML
+    private javafx.scene.control.Button btnGantiOpsi;
+
+    @javafx.fxml.FXML
+    private void handleGantiOpsi(javafx.event.ActionEvent event) {
+        try {
+            javafx.fxml.FXMLLoader loader = new javafx.fxml.FXMLLoader(getClass().getResource("/view/VOpsiWorkout.fxml"));
+            javafx.scene.Parent opsiPage = loader.load();
+            controller.COpsiWorkout ctrl = loader.getController();
+            ctrl.setCurrentUsername(username);
+            // Tambahkan callback agar setelah opsi diganti, workoutListBox di-refresh
+            if (ctrl instanceof controller.COpsiWorkout) {
+                ((controller.COpsiWorkout)ctrl).setOnOpsiChanged(() -> {
+                    // Setelah opsi workout diganti, refresh workoutListBox
+                    loadWorkouts();
+                });
+            }
+            javafx.scene.Scene scene = ((javafx.scene.Node)event.getSource()).getScene();
+            scene.setRoot(opsiPage);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    @javafx.fxml.FXML
     private void handleBackButton(javafx.scene.input.MouseEvent event) {
         try {
             javafx.fxml.FXMLLoader loader = new javafx.fxml.FXMLLoader(getClass().getResource("/view/HUtama.fxml"));
@@ -41,9 +64,9 @@ public class CWorkout {
             workoutListBox.getChildren().add(label);
             return;
         }
-        java.util.List<String> workouts = model.WorkoutDataStore.getUserWorkouts(username);
-        if (workouts != null && !workouts.isEmpty()) {
-            for (String workout : workouts) {
+        model.UserDataStore.User user = model.UserDataStore.loginUser(username, password);
+        if (user != null && user.workouts != null && !user.workouts.isEmpty()) {
+            for (String workout : user.workouts) {
                 javafx.scene.control.Button btn = new javafx.scene.control.Button(workout);
                 btn.getStyleClass().add("workout-btn");
                 btn.setOnAction(e -> handleWorkoutSelected(workout));
@@ -57,14 +80,18 @@ public class CWorkout {
     }
 
     private void handleWorkoutSelected(String workout) {
-        // Simpan workout yang dipilih ke User.xml jika belum ada
-        model.UserDataStore.User user = model.UserDataStore.loginUser(username, password);
-        if (user != null) {
-            if (!user.workouts.contains(workout)) {
-                user.workouts.add(workout);
-                model.UserDataStore.updateUserWorkouts(username, user.workouts);
+        // Navigasi ke halaman deskripsi dan passing opsi workout serta user
+        try {
+            javafx.fxml.FXMLLoader loader = new javafx.fxml.FXMLLoader(getClass().getResource("/view/VDeskripsi.fxml"));
+            javafx.scene.Parent deskripsiPage = loader.load();
+            controller.CDeskripsi ctrl = loader.getController();
+            ctrl.setWorkoutOption(workout); // passing opsi workout
+            if (username != null && password != null) {
+                ctrl.setUser(username, password);
             }
+            workoutListBox.getScene().setRoot(deskripsiPage);
+        } catch (Exception e) {
+            e.printStackTrace();
         }
-        System.out.println("Workout dipilih: " + workout);
     }
 }

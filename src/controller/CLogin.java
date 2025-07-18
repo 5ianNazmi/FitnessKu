@@ -12,7 +12,6 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.scene.Node;
 import model.UserDataStore;
-import model.WorkoutDataStore;
 
 public class CLogin {
     @FXML private TextField usernameField;
@@ -28,8 +27,12 @@ public class CLogin {
         if (user != null) {
             statusText.setText("Login berhasil!");
             try {
-                // Cek workout di Workout.xml
-                java.util.List<String> workouts = WorkoutDataStore.getUserWorkouts(username);
+                // Cek workout di User.xml
+                java.util.List<String> workouts = null;
+                model.UserDataStore.User userObj = model.UserDataStore.loginUser(username, password);
+                if (userObj != null) {
+                    workouts = userObj.workouts;
+                }
                 if (workouts != null && !workouts.isEmpty()) {
                     changeScene(event, "/view/HUtama.fxml", username); // ke halaman utama
                 } else {

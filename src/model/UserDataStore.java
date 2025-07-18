@@ -116,7 +116,7 @@ public class UserDataStore {
     public static User loginUser(String username, String password) {
         List<User> users = loadUsers();
         for (User u : users) {
-            if (u.username.equals(username) && u.password.equals(password)) {
+            if (u.username.equals(username)) {
                 return u;
             }
         }

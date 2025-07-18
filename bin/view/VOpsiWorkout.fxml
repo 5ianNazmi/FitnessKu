@@ -18,7 +18,7 @@
         <Button fx:id="btnNext" layoutX="140.0" layoutY="511.0" onAction="#handleNext" prefHeight="45.0" prefWidth="120.0" styleClass="login-button" text="Next" />
       <ImageView fitHeight="469.0" fitWidth="231.0" layoutX="89.0" layoutY="-10.0" preserveRatio="true" AnchorPane.rightAnchor="81.0">
          <image>
-            <Image url="@../../../../../Downloads/freepik__the-style-is-candid-image-photography-with-natural__32708-removebg-preview.png" />
+            <Image url="@../extra/freepik__the-style-is-candid-image-photography-with-natural__32708-removebg-preview.png" />
          </image>
       </ImageView>
       <Line endX="2.0" endY="-0.5" layoutX="159.0" layoutY="175.0" startX="-29.0" startY="-0.5" stroke="#43a047" />
