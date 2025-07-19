@@ -9,7 +9,7 @@ public class App extends Application {
     public void start(Stage primaryStage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("/view/HLogin.fxml"));
         Scene scene = new Scene(root);
-        primaryStage.setTitle("JavaFX Test 24523059");
+        primaryStage.setTitle("FitnessKu");
         primaryStage.setResizable(true);
         primaryStage.setScene(scene);
         primaryStage.show();

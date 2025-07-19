@@ -7,6 +7,51 @@ import javafx.scene.control.Label;
 import javafx.scene.web.WebView;
 
 public class CDeskripsi {
+    @FXML private javafx.scene.layout.Pane overlayPane;
+    @FXML private Label poinLabel;
+    @FXML private javafx.scene.layout.VBox rootVBox;
+    // Konfigurasi jumlah poin yang didapat per selesai exercise
+    private static final int POINTS_PER_EXERCISE = 100;
+    @FXML
+    private void handleEndExercise() {
+        // Tampilkan overlay blur dan teks besar poin
+        if (overlayPane != null && poinLabel != null && rootVBox != null) {
+            overlayPane.setVisible(true);
+            poinLabel.setText("Selamat! Anda mendapat " + POINTS_PER_EXERCISE + " poin!");
+            rootVBox.setEffect(new javafx.scene.effect.BoxBlur(8, 8, 3));
+        }
+
+        // Tambahkan poin ke user dan simpan ke UserDataStore
+        if (username != null && password != null) {
+            model.UserDataStore.User user = model.UserDataStore.loginUser(username, password);
+            if (user != null) {
+                user.poin += POINTS_PER_EXERCISE;
+                model.UserDataStore.updateUser(user);
+            }
+        }
+
+        // Setelah beberapa detik, hilangkan overlay dan kembali ke halaman workout
+        javafx.animation.PauseTransition pause = new javafx.animation.PauseTransition(javafx.util.Duration.seconds(5));
+        pause.setOnFinished(e -> {
+            if (overlayPane != null && rootVBox != null) {
+                overlayPane.setVisible(false);
+                rootVBox.setEffect(null);
+            }
+            try {
+                javafx.fxml.FXMLLoader loader = new javafx.fxml.FXMLLoader(getClass().getResource("/view/VWorkout.fxml"));
+                javafx.scene.Parent workoutPage = loader.load();
+                controller.CWorkout ctrl = loader.getController();
+                if (username != null && password != null) {
+                    ctrl.setUser(username, password);
+                }
+                javafx.scene.Scene scene = webView.getScene();
+                scene.setRoot(workoutPage);
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
+        });
+        pause.play();
+    }
     // Untuk passing user agar workout tetap tampil saat kembali
     private String username = null;
     private String password = null;
@@ -55,6 +100,7 @@ public class CDeskripsi {
             if (titleLabel != null) titleLabel.setText("");
             if (repeatLabel != null) repeatLabel.setText("");
             if (webView != null) webView.getEngine().loadContent("");
+            if (closeButton != null) closeButton.setDisable(true);
             return;
         }
         WorkoutDataStore.Exercise ex = exercises.get(idx);
@@ -78,13 +124,32 @@ public class CDeskripsi {
         if (instruksiLabel != null) instruksiLabel.setText(ex.description);
         // Set repeat
         repeatLabel.setText(String.valueOf(ex.repeat));
+        // Tampilkan tombol selesai hanya jika sudah di exercise terakhir
+        if (closeButton != null) {
+            boolean lastExercise = (currentIndex == exercises.size() - 1);
+            closeButton.setVisible(lastExercise);
+            closeButton.setDisable(!lastExercise);
+        }
     }
 
     @FXML
     private void handleNextExercise() {
         if (exercises == null || exercises.isEmpty()) return;
-        currentIndex = (currentIndex + 1) % exercises.size();
-        showExercise(currentIndex);
+        if (currentIndex < exercises.size() - 1) {
+            currentIndex++;
+            showExercise(currentIndex);
+        }
+        // Jika sudah di exercise terakhir, tidak melakukan apa-apa
+    }
+
+    @FXML
+    private void handlePreviousExercise() {
+        if (exercises == null || exercises.isEmpty()) return;
+        if (currentIndex > 0) {
+            currentIndex--;
+            showExercise(currentIndex);
+        }
+        // Jika sudah di exercise pertama, tidak melakukan apa-apa
     }
 
     @FXML

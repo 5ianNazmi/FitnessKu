@@ -1,3 +1,12 @@
+/* Style untuk label poin di overlay agar besar dan center */
+.overlay-poin-label {
+    -fx-text-fill: #fff;
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-effect: dropshadow(gaussian, #222, 8, 0.5, 0, 2);
+    -fx-alignment: center;
+    -fx-text-alignment: center;
+}
 /* Root background */
 .root {
     -fx-background-color: #000000;

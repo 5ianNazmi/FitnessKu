@@ -69,12 +69,8 @@
         <password>bayu</password>
         <workouts>
             <workout>Arms</workout>
-            <workout>Legs</workout>
-            <workout>Chest</workout>
-            <workout>Abs</workout>
-            <workout>Full Body</workout>
         </workouts>
-        <poin>0</poin>
+        <poin>6300</poin>
         <level>1</level>
         <progress>0</progress>
         <notifEnabled>true</notifEnabled>

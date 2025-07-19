@@ -1,3 +1,12 @@
+/* Progress text label kecil dan rapi */
+.progress-text-label {
+    -fx-font-size: 24px;
+    -fx-text-fill: #e0e0e0;
+    -fx-font-weight: bold;
+    -fx-alignment: center;
+    -fx-text-alignment: center;
+    -fx-padding: 0 2 0 2;
+}
 .root, .anchor-pane, .vbox, .hbox {
     -fx-background-color: #000000;
     -fx-font-family: 'Segoe UI', Arial, sans-serif;

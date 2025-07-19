@@ -10,6 +10,22 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class UserDataStore {
+    // Update satu user dan simpan ke XML
+    public static void updateUser(User user) {
+        List<User> users = loadUsers();
+        boolean found = false;
+        for (int i = 0; i < users.size(); i++) {
+            if (users.get(i).username.equals(user.username)) {
+                users.set(i, user);
+                found = true;
+                break;
+            }
+        }
+        if (!found) {
+            users.add(user);
+        }
+        saveUsers(users);
+    }
     private static final String FILE_PATH = "src/model/User.xml";
 
     public static class User {

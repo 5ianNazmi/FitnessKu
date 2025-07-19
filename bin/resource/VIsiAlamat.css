@@ -1,3 +1,26 @@
+/* Overlay label style */
+/* Overlay label style untuk Text (multiline, center, rapi) */
+.overlay-label {
+    -fx-font-size: 22px;
+    font-size: 22px;
+    -fx-font-weight: bold;
+    font-weight: bold;
+    -fx-fill: #fff;
+    fill: #fff;
+    -fx-background-radius: 12;
+    -fx-padding: 18 12 18 12;
+    padding: 18px 12px;
+    -fx-effect: dropshadow(gaussian, #222, 8, 0.5, 0, 2);
+    -fx-text-alignment: center;
+}
+/* Overlay success text (hijau) */
+/* Overlay success text (hijau, bold) */
+.overlay-success {
+    -fx-fill: #2ecc40;
+    fill: #2ecc40;
+    -fx-font-weight: bold;
+    font-weight: bold;
+}
 .root, .anchor-pane {
     -fx-background-color: #000000;
 }
