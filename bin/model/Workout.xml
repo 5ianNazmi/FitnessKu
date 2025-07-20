@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <workouts>
 <option name="Arms">
+    <total_calories>85</total_calories>
+    <total_duration>4</total_duration>
     <exercise>
         <name>Arm Circle</name>
         <video>https://youtu.be/Lha66p0ZXUc?si=QL2i2F5GqVvHA6aN</video>
@@ -27,6 +29,8 @@
     </exercise>
 </option>
 <option name="Chest">
+    <total_calories>70</total_calories>
+    <total_duration>4</total_duration>
     <exercise>
         <name>Incline Push-Up</name>
         <video>https://youtu.be/3WUUeM07i_Q?si=wueNmdz188JoNZ5r</video>
@@ -53,6 +57,8 @@
     </exercise>
 </option>
 <option name="Abs">
+    <total_calories>83</total_calories>
+    <total_duration>4</total_duration>
     <exercise>
         <name>Abdominal Crunches</name>
         <video>https://youtu.be/RUNrHkbP4Pc?si=0A9gNJRIeLj4Yo1</video>
@@ -79,6 +85,8 @@
     </exercise>
 </option>
 <option name="Legs">
+    <total_calories>80</total_calories>
+    <total_duration>4</total_duration>
     <exercise>
         <name>Side Hop</name>
         <video>https://youtu.be/nYmUEJIBj3c?si=Np2SkYWlCGUCoTPW</video>
@@ -105,6 +113,8 @@
     </exercise>
 </option>
 <option name="Full Body">
+    <total_calories>83</total_calories>
+    <total_duration>4</total_duration>
     <exercise>
         <name>Jumping Jack</name>
         <video>https://youtu.be/2W4ZNSwoW_4?si=at3zH5VQYceaE-vY</video>

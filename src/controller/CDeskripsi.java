@@ -12,12 +12,35 @@ public class CDeskripsi {
     @FXML private javafx.scene.layout.VBox rootVBox;
     // Konfigurasi jumlah poin yang didapat per selesai exercise
     private static final int POINTS_PER_EXERCISE = 100;
+    // Timer untuk durasi workout
+    private long workoutStartTime = 0;
+
+    @FXML
+    public void initialize() {
+        isInitialized = true;
+        workoutStartTime = System.currentTimeMillis();
+        if (workoutOption != null && !workoutOption.isEmpty()) {
+            exercises = WorkoutDataStore.getExercisesByOption(workoutOption);
+            currentIndex = 0;
+            showExercise(currentIndex);
+        }
+    }
+
     @FXML
     private void handleEndExercise() {
-        // Tampilkan overlay blur dan teks besar poin
+        // Hitung durasi workout
+        long workoutEndTime = System.currentTimeMillis();
+        int durationMinutes = (int) Math.max(1, (workoutEndTime - workoutStartTime) / 60000);
+        int totalCalories = model.WorkoutDataStore.getOptionTotalCalories(workoutOption);
+
+        // Tampilkan overlay blur dan info
         if (overlayPane != null && poinLabel != null && rootVBox != null) {
             overlayPane.setVisible(true);
-            poinLabel.setText("Selamat! Anda mendapat " + POINTS_PER_EXERCISE + " poin!");
+            poinLabel.setText(
+                "Selamat! Anda mendapat " + POINTS_PER_EXERCISE + " poin!\n" +
+                "Kalori terbakar: " + totalCalories + " kkal\n" +
+                "Durasi: " + durationMinutes + " menit"
+            );
             rootVBox.setEffect(new javafx.scene.effect.BoxBlur(8, 8, 3));
         }
 
@@ -30,8 +53,16 @@ public class CDeskripsi {
             }
         }
 
+        // Simpan riwayat workout ke Progress.xml
+        if (username != null && !username.isEmpty()) {
+            model.ProgressDataStore.addWorkoutHistory(username, workoutOption, totalCalories, durationMinutes);
+            System.out.println("Saving workout: " + username + " - " + workoutOption + " - " + totalCalories + " cal - " + durationMinutes + " min");
+        } else {
+            System.out.println("Username is null or empty, cannot save workout history");
+        }
+
         // Setelah beberapa detik, hilangkan overlay dan kembali ke halaman workout
-        javafx.animation.PauseTransition pause = new javafx.animation.PauseTransition(javafx.util.Duration.seconds(5));
+        javafx.animation.PauseTransition pause = new javafx.animation.PauseTransition(javafx.util.Duration.seconds(3));
         pause.setOnFinished(e -> {
             if (overlayPane != null && rootVBox != null) {
                 overlayPane.setVisible(false);
@@ -76,17 +107,6 @@ public class CDeskripsi {
         this.workoutOption = option;
         // Jika sudah di-initialize, reload exercise sesuai opsi baru
         if (isInitialized) {
-            exercises = WorkoutDataStore.getExercisesByOption(workoutOption);
-            currentIndex = 0;
-            showExercise(currentIndex);
-        }
-    }
-
-    @FXML
-    public void initialize() {
-        isInitialized = true;
-        // Hanya load jika workoutOption sudah di-set
-        if (workoutOption != null && !workoutOption.isEmpty()) {
             exercises = WorkoutDataStore.getExercisesByOption(workoutOption);
             currentIndex = 0;
             showExercise(currentIndex);

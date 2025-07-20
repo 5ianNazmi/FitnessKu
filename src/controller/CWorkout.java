@@ -67,10 +67,21 @@ public class CWorkout {
         model.UserDataStore.User user = model.UserDataStore.loginUser(username, password);
         if (user != null && user.workouts != null && !user.workouts.isEmpty()) {
             for (String workout : user.workouts) {
-                javafx.scene.control.Button btn = new javafx.scene.control.Button(workout);
+                int totalCalories = model.WorkoutDataStore.getOptionTotalCalories(workout);
+                int totalDuration = model.WorkoutDataStore.getOptionTotalDuration(workout);
+                javafx.scene.layout.VBox vbox = new javafx.scene.layout.VBox(4);
+                javafx.scene.control.Label workoutLabel = new javafx.scene.control.Label(workout);
+                workoutLabel.setStyle("-fx-text-fill: #26b062; -fx-font-size: 18px; -fx-font-weight: bold;");
+                javafx.scene.control.Label infoLabel = new javafx.scene.control.Label(
+                    "Kalori: " + totalCalories + " kkal | Durasi: " + totalDuration + " menit"
+                );
+                infoLabel.setStyle("-fx-text-fill: #fff; -fx-font-size: 14px;");
+                javafx.scene.control.Button btn = new javafx.scene.control.Button("Mulai Workout");
                 btn.getStyleClass().add("workout-btn");
                 btn.setOnAction(e -> handleWorkoutSelected(workout));
-                workoutListBox.getChildren().add(btn);
+                vbox.getChildren().addAll(workoutLabel, infoLabel, btn);
+                vbox.setStyle("-fx-background-color: #181A20; -fx-background-radius: 12px; -fx-padding: 12 12 12 12; -fx-effect: dropshadow(gaussian, #000, 2, 0.2, 0, 1);");
+                workoutListBox.getChildren().add(vbox);
             }
         } else {
             javafx.scene.control.Label label = new javafx.scene.control.Label("Belum ada workout yang dipilih");

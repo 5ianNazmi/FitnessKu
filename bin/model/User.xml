@@ -68,9 +68,13 @@
         <email>bayu@gmail.com</email>
         <password>bayu</password>
         <workouts>
+            <workout>Arms</workout>
+            <workout>Legs</workout>
+            <workout>Chest</workout>
+            <workout>Abs</workout>
             <workout>Full Body</workout>
         </workouts>
-        <poin>6700</poin>
+        <poin>8800</poin>
         <level>1</level>
         <progress>0</progress>
         <notifEnabled>true</notifEnabled>

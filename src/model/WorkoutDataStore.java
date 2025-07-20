@@ -10,6 +10,55 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class WorkoutDataStore {
+    public static int getOptionTotalCalories(String optionName) {
+        try {
+            File xmlFile = new File(FILE_PATH);
+            if (!xmlFile.exists()) {
+                xmlFile = new File("./src/model/Workout.xml");
+                if (!xmlFile.exists()) return 0;
+            }
+            DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+            DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+            Document doc = dBuilder.parse(xmlFile);
+            NodeList optionNodes = doc.getElementsByTagName("option");
+            String target = optionName.trim().toLowerCase();
+            for (int i = 0; i < optionNodes.getLength(); i++) {
+                Element optionElem = (Element) optionNodes.item(i);
+                String optNameRaw = optionElem.getAttribute("name");
+                String optName = optNameRaw.trim().toLowerCase();
+                if (optName.equals(target)) {
+                    String val = getTagValue(optionElem, "total_calories");
+                    try { return Integer.parseInt(val); } catch (Exception e) { return 0; }
+                }
+            }
+        } catch (Exception ex) { ex.printStackTrace(); }
+        return 0;
+    }
+
+    public static int getOptionTotalDuration(String optionName) {
+        try {
+            File xmlFile = new File(FILE_PATH);
+            if (!xmlFile.exists()) {
+                xmlFile = new File("./src/model/Workout.xml");
+                if (!xmlFile.exists()) return 0;
+            }
+            DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+            DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+            Document doc = dBuilder.parse(xmlFile);
+            NodeList optionNodes = doc.getElementsByTagName("option");
+            String target = optionName.trim().toLowerCase();
+            for (int i = 0; i < optionNodes.getLength(); i++) {
+                Element optionElem = (Element) optionNodes.item(i);
+                String optNameRaw = optionElem.getAttribute("name");
+                String optName = optNameRaw.trim().toLowerCase();
+                if (optName.equals(target)) {
+                    String val = getTagValue(optionElem, "total_duration");
+                    try { return Integer.parseInt(val); } catch (Exception e) { return 0; }
+                }
+            }
+        } catch (Exception ex) { ex.printStackTrace(); }
+        return 0;
+    }
     private static final String FILE_PATH = "c:/Users/favia/OneDrive/Documents/FitnessKu/src/model/Workout.xml";
 
     public static List<String> getUserWorkouts(String username) {

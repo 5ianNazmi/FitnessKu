@@ -1,97 +1,82 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
-<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane prefHeight="600" prefWidth="400" styleClass="progress-root" stylesheets="@../resource/VProgress.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CProgress">
-    <Pane />
-    <ImageView fitHeight="24" fitWidth="24" layoutY="16.0" styleClass="header-fire" />
-
-    <Label layoutX="55.0" layoutY="20.0" styleClass="section-title" text="Progress Workout" />
-
-    <!-- Target Mingguan -->
-    <VBox layoutX="12.0" layoutY="97.0" prefHeight="134.0" prefWidth="370.0" styleClass="card">
-        <HBox alignment="CENTER_LEFT" spacing="8">
-            <Label styleClass="card-title" text="Target mingguan" />
-            <ImageView fitHeight="16" fitWidth="16" styleClass="edit-icon" />
-            <Pane HBox.hgrow="ALWAYS" />
-            <Label styleClass="target-done" text="1" />
-            <Label styleClass="target-total" text="/ 7" />
-        </HBox>
-        <HBox alignment="CENTER" spacing="12" styleClass="weekly-target-row">
-            <VBox alignment="CENTER">
-                <ImageView fitHeight="32" fitWidth="32" styleClass="medal-icon" />
-                <Label styleClass="date-label-active" text="01" />
+<AnchorPane prefHeight="600.0" prefWidth="400.0" styleClass="progress-root" stylesheets="@../resource/VProgress.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CProgress">
+   <children>
+      <!-- Header dengan back button - tetap di luar ScrollPane -->
+      <HBox alignment="CENTER_LEFT" layoutX="24.0" layoutY="14.0" prefWidth="352.0" styleClass="header-bar">
+         <children>
+            <Pane onMouseClicked="#handleBackButton" styleClass="back-btn">
+               <children>
+                  <ImageView fitHeight="24.0" fitWidth="33.0" layoutX="-1.0" layoutY="7.0" styleClass="back-arrow-icon">
+                     <image>
+                        <Image url="@../extra/Screenshot_2025-07-15_222001-removebg-preview.png" />
+                     </image>
+                  </ImageView>
+               </children></Pane>
+         </children>
+      </HBox>
+      
+      <!-- Judul halaman - tetap di luar ScrollPane -->
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="151.0" layoutY="37.0" styleClass="section-title" text="Progress" textAlignment="CENTER" />
+      
+      <!-- ScrollPane untuk seluruh konten progress -->
+      <ScrollPane fitToWidth="true" hbarPolicy="NEVER" layoutX="0.0" layoutY="90.0" prefHeight="510.0" prefWidth="400.0" styleClass="progress-scroll-pane" vbarPolicy="AS_NEEDED">
+         <content>
+            <VBox spacing="16" style="-fx-padding: 24 24 24 24;">
+               <children>
+                  <!-- Chart kalori -->
+                  <VBox styleClass="card">
+                     <children>
+                        <BarChart fx:id="caloriesBarChart" prefHeight="180.0" prefWidth="320.0" styleClass="progress-chart thick-bars" title="Kalori Terbakar Hari Ini">
+                           <xAxis>
+                              <CategoryAxis side="BOTTOM" />
+                           </xAxis>
+                           <yAxis>
+                              <NumberAxis side="LEFT" />
+                           </yAxis>
+                        </BarChart>
+                     </children>
+                  </VBox>
+                  
+                  <!-- Chart durasi -->
+                  <VBox styleClass="card">
+                     <children>
+                        <BarChart fx:id="durationBarChart" prefHeight="180.0" prefWidth="320.0" styleClass="progress-chart thick-bars" title="Durasi Workout Hari Ini">
+                           <xAxis>
+                              <CategoryAxis side="BOTTOM" />
+                           </xAxis>
+                           <yAxis>
+                              <NumberAxis side="LEFT" />
+                           </yAxis>
+                        </BarChart>
+                     </children>
+                  </VBox>
+                  
+                  <!-- Aktivitas hari ini dalam scroll pane -->
+                  <VBox styleClass="card">
+                     <children>
+                        <ScrollPane fitToWidth="true" hbarPolicy="NEVER" prefHeight="120.0" styleClass="scroll-pane" vbarPolicy="AS_NEEDED">
+                           <content>
+                              <VBox fx:id="activityTodayBox" spacing="8" />
+                           </content>
+                        </ScrollPane>
+                     </children>
+                  </VBox>
+               </children>
             </VBox>
-            <VBox alignment="CENTER">
-                <ImageView fitHeight="32" fitWidth="32" styleClass="medal-icon" />
-                <Label styleClass="date-label" text="02" />
-            </VBox>
-            <VBox alignment="CENTER">
-                <ImageView fitHeight="32" fitWidth="32" styleClass="medal-icon" />
-                <Label styleClass="date-label" text="03" />
-            </VBox>
-            <VBox alignment="CENTER">
-                <StackPane>
-                    <ImageView fitHeight="32" fitWidth="32" styleClass="medal-icon-active" />
-                </StackPane>
-                <Label styleClass="date-label" text="04" />
-            </VBox>
-            <VBox alignment="CENTER">
-                <ImageView fitHeight="32" fitWidth="32" styleClass="medal-icon" />
-                <Label styleClass="date-label" text="05" />
-            </VBox>
-            <VBox alignment="CENTER">
-                <ImageView fitHeight="32" fitWidth="32" styleClass="medal-icon" />
-                <Label styleClass="date-label" text="06" />
-            </VBox>
-            <VBox alignment="CENTER">
-                <ImageView fitHeight="32" fitWidth="32" styleClass="medal-icon" />
-                <Label styleClass="date-label" text="07" />
-            </VBox>
-        </HBox>
-    </VBox>
-
-    <!-- Rencana Hari Ini -->
-    <VBox layoutX="15.0" layoutY="242.0" prefHeight="187.0" prefWidth="370.0" styleClass="card">
-        <Label styleClass="card-title" text="Rencana Hari Ke-2" />
-        <HBox alignment="CENTER_LEFT" spacing="12">
-            <ImageView fitHeight="56.0" fitWidth="61.0" styleClass="plan-img">
-            <image>
-               <Image url="@../extra/Pictures/OTOT.png" />
-            </image></ImageView>
-            <VBox alignment="CENTER_LEFT" spacing="2">
-                <Label styleClass="plan-title" text="Hari ke-2" />
-                <Label styleClass="plan-desc" text="Seluruh Tubuh Menambah Otot" />
-            </VBox>
-        </HBox>
-        <Button prefHeight="51.0" prefWidth="173.0" styleClass="start-btn" text="Mulai sekarang!" />
-    </VBox>
-
-    <!-- Aktivitas -->
-    <VBox layoutX="15.0" layoutY="440.0" prefHeight="134.0" prefWidth="370.0" styleClass="card">
-        <HBox alignment="CENTER_LEFT">
-            <Label styleClass="card-title" text="Aktivitas Hari Ini" />
-            <Pane HBox.hgrow="ALWAYS" />
-        </HBox>
-        <HBox alignment="CENTER_LEFT" prefHeight="62.0" prefWidth="338.0" spacing="12">
-            <StackPane />
-            <VBox alignment="CENTER_LEFT" spacing="2">
-                <Label styleClass="activity-title" text="Berlari" />
-                <Label styleClass="activity-desc" text="Jul 09 | 1h 10 menit | 671 kkal" />
-            </VBox>
-        </HBox>
-    </VBox>
-   <ImageView fitHeight="23.0" fitWidth="38.0" layoutX="21.0" layoutY="23.0" onMouseClicked="#handleBackButton">
-      <image>
-         <Image url="@../extra/Screenshot_2025-07-15_222001-removebg-preview.png" />
-      </image>
-   </ImageView>
+         </content>
+      </ScrollPane>
+   </children>
 </AnchorPane>
