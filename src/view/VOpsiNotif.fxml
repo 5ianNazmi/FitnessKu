@@ -22,10 +22,11 @@
                 <ComboBox fx:id="hourCombo" promptText="Jam" />
                 <ComboBox fx:id="minuteCombo" promptText="Menit" />
             </HBox>
+            <Label fx:id="savedLabel" managed="false" styleClass="notif-label" text="Tersimpan!" visible="false" />
             <Button fx:id="saveBtn" onAction="#handleSave" styleClass="notif-save-btn" text="Simpan" />
         </VBox>
-        <Label fx:id="savedLabel" managed="false" styleClass="notif-label" text="Tersimpan!" visible="false" />
     </VBox>
+     <!-- Label tersimpan dipindahkan ke dalam timeBox di atas tombol simpan -->
    <ImageView fitHeight="23.0" fitWidth="38.0" layoutX="27.0" layoutY="29.0" onMouseClicked="#handleBackButton">
       <image>
          <Image url="@../extra/Screenshot_2025-07-15_222001-removebg-preview.png" />

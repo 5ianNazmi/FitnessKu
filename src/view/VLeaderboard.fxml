@@ -1,49 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Circle?>
 
 <AnchorPane prefHeight="600" prefWidth="400" styleClass="root-bg" stylesheets="@../resource/VLeaderboard.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CLeaderboard">
-    <Button fx:id="backButton" layoutX="12" layoutY="16" styleClass="back-btn">
-        <graphic>
-            <ImageView fitHeight="24.0" fitWidth="40.0" pickOnBounds="true" styleClass="back-arrow-icon">
-                <image>
-                    <Image url="@../../../../../Pictures/Tombol%20BACK.png" />
-                </image>
-            </ImageView>
-        </graphic>
-    </Button>
-    <VBox alignment="TOP_CENTER" spacing="0" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0">
+    <VBox alignment="TOP_CENTER" minHeight="-Infinity" minWidth="-Infinity" prefHeight="606.0" prefWidth="400.0" spacing="0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0">
          <Label styleClass="header-title" text="Leaderboard" />
         <!-- Top 1 Section -->
         <VBox alignment="CENTER" prefHeight="140" spacing="4" styleClass="top1-bg">
             <StackPane alignment="CENTER">
                 <Circle radius="48" styleClass="avatar-main" />
             </StackPane>
-            <Label styleClass="rank-main" text="1st" />
-            <Label styleClass="name-main" text="Dzaki Putra" />
-            <Label styleClass="score-main" text="12984 Points" />
+            <Label fx:id="rankLabel" styleClass="rank-main" text="1st" />
+            <Label fx:id="nameLabel" styleClass="name-main" text="Dzaki Putra" />
+            <Label fx:id="scoreLabel" styleClass="score-main" text="12984 Points" />
         </VBox>
         <!-- TableView Leaderboard (for 2nd and below) -->
-        <TableView fx:id="leaderboardTable" prefHeight="400" styleClass="leaderboard-table">
+        <TableView fx:id="leaderboardTable" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="377.0" prefWidth="333.0" styleClass="leaderboard-table">
             <columns>
-                <TableColumn fx:id="avatarColumn" minWidth="0.0" prefWidth="0.0" styleClass="avatar-column" text="" />
-                <TableColumn fx:id="nameColumn" prefWidth="202.39996945858002" styleClass="name-column" text="Name" />
-                <TableColumn fx:id="scoreColumn" prefWidth="197.60003662109375" styleClass="score-column" text="Score" />
+                <TableColumn prefWidth="91.0" resizable="false" sortable="false" styleClass="rank-column header-bold" text="Rank" />
+                <TableColumn fx:id="nameColumn" prefWidth="151.0" resizable="false" sortable="false" styleClass="name-column header-bold" text="Nama" />
+                <TableColumn fx:id="scoreColumn" prefWidth="89.0" resizable="false" sortable="false" styleClass="score-column header-bold" text="Poin" />
             </columns>
         </TableView>
     </VBox>
-   <ImageView fitHeight="23.0" fitWidth="38.0" layoutX="37.0" layoutY="39.0" onMouseClicked="#handleBackButton">
-      <image>
-         <Image url="@../extra/Screenshot_2025-07-15_222001-removebg-preview.png" />
-      </image>
-   </ImageView>
+   <Pane layoutX="37.0" layoutY="39.0">
+      <children>
+         <ImageView fitHeight="23.0" fitWidth="38.0" onMouseClicked="#handleBackButton">
+            <image>
+               <Image url="@../extra/Screenshot_2025-07-15_222001-removebg-preview.png" />
+            </image>
+         </ImageView>
+      </children>
+   </Pane>
 </AnchorPane>

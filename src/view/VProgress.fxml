@@ -65,7 +65,7 @@
         <HBox alignment="CENTER_LEFT" spacing="12">
             <ImageView fitHeight="56.0" fitWidth="61.0" styleClass="plan-img">
             <image>
-               <Image url="@../../../../../Pictures/OTOT.png" />
+               <Image url="@../extra/Pictures/OTOT.png" />
             </image></ImageView>
             <VBox alignment="CENTER_LEFT" spacing="2">
                 <Label styleClass="plan-title" text="Hari ke-2" />

@@ -34,12 +34,32 @@ public class COpsiNotif {
     @FXML
     private javafx.scene.control.Label savedLabel;
 
-    private String username = "favian";
-    private String password = "vian";
+    private String username = null;
+    private String password = null;
 
     public void setUser(String username, String password) {
         this.username = username;
         this.password = password;
+        refreshUserData();
+    }
+
+    private void refreshUserData() {
+        // Load data notif user jika username/password sudah di-set
+        if (username != null && password != null) {
+            model.UserDataStore.User user = model.UserDataStore.loginUser(username, password);
+            if (user != null) {
+                notifCheckBox.setSelected(user.notifEnabled);
+                if (user.notifEnabled) {
+                    timeBox.setVisible(true);
+                    timeBox.setManaged(true);
+                    hourCombo.setValue(user.notifHour);
+                    minuteCombo.setValue(user.notifMinute);
+                } else {
+                    timeBox.setVisible(false);
+                    timeBox.setManaged(false);
+                }
+            }
+        }
     }
 
     @FXML
@@ -51,6 +71,15 @@ public class COpsiNotif {
         notifCheckBox.selectedProperty().addListener((obs, oldVal, newVal) -> {
             timeBox.setVisible(newVal);
             timeBox.setManaged(newVal);
+            if (newVal) {
+                // Jika jam/menit belum dipilih, isi default
+                if (hourCombo.getValue() == null) hourCombo.setValue("08");
+                if (minuteCombo.getValue() == null) minuteCombo.setValue("00");
+            }
+            // Simpan perubahan notif langsung saat di-uncheck
+            if (!newVal && username != null && password != null) {
+                model.UserDataStore.updateUserNotif(username, false, "", "");
+            }
         });
         // Default: sembunyikan pengaturan waktu
         timeBox.setVisible(false);
@@ -62,24 +91,22 @@ public class COpsiNotif {
             savedLabel.setManaged(false);
         }
 
-        // Load data notif user jika ada
-        model.UserDataStore.User user = model.UserDataStore.loginUser(username, password);
-        if (user != null) {
-            notifCheckBox.setSelected(user.notifEnabled);
-            if (user.notifEnabled) {
-                timeBox.setVisible(true);
-                timeBox.setManaged(true);
-                hourCombo.setValue(user.notifHour);
-                minuteCombo.setValue(user.notifMinute);
-            }
-        }
+        // Data user akan di-refresh setelah setUser dipanggil dari controller utama
     }
 
     @FXML
     private void handleSave() {
         boolean enabled = notifCheckBox.isSelected();
-        String jam = hourCombo.getValue() != null ? hourCombo.getValue() : "";
-        String menit = minuteCombo.getValue() != null ? minuteCombo.getValue() : "";
+        String jam = hourCombo.getValue();
+        String menit = minuteCombo.getValue();
+        // Jika notif aktif dan jam/menit belum dipilih, isi default
+        if (enabled) {
+            if (jam == null || jam.isEmpty()) jam = "08";
+            if (menit == null || menit.isEmpty()) menit = "00";
+        } else {
+            jam = "";
+            menit = "";
+        }
         model.UserDataStore.updateUserNotif(username, enabled, jam, menit);
         // Tampilkan pesan sukses
         if (savedLabel != null) {

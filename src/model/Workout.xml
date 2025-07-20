@@ -104,4 +104,30 @@
         <repeat>20</repeat>
     </exercise>
 </option>
+<option name="Full Body">
+    <exercise>
+        <name>Jumping Jack</name>
+        <video>https://youtu.be/2W4ZNSwoW_4?si=at3zH5VQYceaE-vY</video>
+        <description>Mulailah dengan kedua kaki rapat dan kedua lengan di samping tubuh, lalu lompat ke atas dengan kedua kaki terbuka dan kedua tangan di atas kepala. Kembali ke posisi awal, lalu ulangi repetisi berikutnya. Latihan ini melatih seluruh tubuh dan melatih semua kelompok otot besar Anda.</description>
+        <repeat>30</repeat>
+    </exercise>
+    <exercise>
+        <name>Triceps Dips</name>
+        <video>https://youtu.be/JhX1nBnirNw?si=eQ_vWASSYmjLiwJK</video>
+        <description>Duduk di tepi kursi atau bangku, letakkan tangan di samping pinggul. Geser tubuh ke depan dan turunkan badan dengan menekuk siku hingga membentuk sudut 90 derajat, lalu dorong tubuh kembali ke atas. Latihan ini melatih otot triceps dan bahu.</description>
+        <repeat>10</repeat>
+    </exercise>
+    <exercise>
+        <name>Russian Twist</name>
+        <video>https://youtu.be/DJQGX2J4IVw?si=R5DCrcWUfW7wVe-A</video>
+        <description>Duduklah di lantai dengan lutut ditekuk dan tumit menempel di lantai. Condongkan tubuh sedikit ke belakang, angkat kaki sedikit jika mampu, lalu putar tubuh ke kanan dan kiri secara bergantian sambil memegang tangan di depan dada. Latihan ini melatih otot perut samping dan keseimbangan tubuh.</description>
+        <repeat>20</repeat>
+    </exercise>
+    <exercise>
+        <name>Wall Calf Raises</name>
+        <video>https://youtu.be/GQa_N7wft7M?si=FKJ5f0fW1guruL_i</video>
+        <description>Berdiri menghadap dinding, letakkan kedua tangan di dinding untuk keseimbangan, lalu naikkan tumit setinggi mungkin dan turunkan perlahan. Ulangi gerakan ini selama durasi yang ditentukan. Latihan ini melatih otot betis dan meningkatkan kekuatan kaki.</description>
+        <repeat>20</repeat>
+    </exercise>
+</option>
 </workouts>

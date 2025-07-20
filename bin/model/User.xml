@@ -68,13 +68,13 @@
         <email>bayu@gmail.com</email>
         <password>bayu</password>
         <workouts>
-            <workout>Arms</workout>
+            <workout>Full Body</workout>
         </workouts>
-        <poin>6300</poin>
+        <poin>6700</poin>
         <level>1</level>
         <progress>0</progress>
         <notifEnabled>true</notifEnabled>
         <notifHour>07</notifHour>
-        <notifMinute>25</notifMinute>
+        <notifMinute>40</notifMinute>
     </user>
 </users>

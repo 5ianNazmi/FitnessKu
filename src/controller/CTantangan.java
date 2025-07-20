@@ -17,6 +17,46 @@ public class CTantangan {
         this.password = password;
     }
 
+    @FXML private Label workoutLabel;
+    @FXML private Button btnSpin;
+    @FXML private Button btnAmbil;
+
+    private final List<String> workoutOptions = Arrays.asList(
+        "Full Body", "Chest", "Abs", "Arms", "Legs"
+    );
+    private String selectedWorkout = null;
+
+    @FXML
+    public void initialize() {
+        btnSpin.setOnAction(this::handleSpinWorkout);
+        btnAmbil.setOnAction(this::handleAmbilTantangan);
+        btnAmbil.setDisable(true);
+    }
+
+    private void handleSpinWorkout(ActionEvent event) {
+        selectedWorkout = workoutOptions.get(new Random().nextInt(workoutOptions.size()));
+        workoutLabel.setText(selectedWorkout);
+        btnAmbil.setDisable(false);
+    }
+
+    private void handleAmbilTantangan(ActionEvent event) {
+        try {
+            javafx.fxml.FXMLLoader loader = new javafx.fxml.FXMLLoader(getClass().getResource("/view/VDeskripsi.fxml"));
+            javafx.scene.Parent deskripsiPage = loader.load();
+            controller.CDeskripsi ctrl = loader.getController();
+            if (username != null && password != null) {
+                ctrl.setUser(username, password);
+            }
+            if (selectedWorkout != null) {
+                ctrl.setWorkoutOption(selectedWorkout);
+            }
+            javafx.scene.Scene scene = btnAmbil.getScene();
+            scene.setRoot(deskripsiPage);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
     @javafx.fxml.FXML
     private void handleBackButton(javafx.scene.input.MouseEvent event) {
         try {
@@ -29,21 +69,5 @@ public class CTantangan {
         } catch (Exception e) {
             e.printStackTrace();
         }
-    }
-    @FXML private Label workoutLabel;
-    @FXML private Button btnRandom;
-
-    private final List<String> workoutOptions = Arrays.asList(
-        "Full Body", "Chest", "Abs", "Arms", "Legs"
-    );
-
-    @FXML
-    public void initialize() {
-        btnRandom.setOnAction(this::handleRandomWorkout);
-    }
-
-    private void handleRandomWorkout(ActionEvent event) {
-        String randomWorkout = workoutOptions.get(new Random().nextInt(workoutOptions.size()));
-        workoutLabel.setText(randomWorkout);
     }
 }
