@@ -1,7 +1,7 @@
 /* CSS utama aplikasi fitness - tema dark dan hijau (konsisten dengan VOpsiWorkout) */
 
 .root {
-    -fx-background-color: #181A20;
+    -fx-background-color: #111;
     -fx-font-family: 'Segoe UI', 'Poppins', 'Roboto', 'Arial', sans-serif;
 }
 

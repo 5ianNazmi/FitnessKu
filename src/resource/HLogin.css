@@ -1,7 +1,7 @@
 /* CSS Login Page - tema dark dan hijau seperti VOpsiWorkout */
 
 .root {
-    -fx-background-color: #181A20;
+    -fx-background-color: #111;
     -fx-font-family: 'Arial', sans-serif;
 }
 
@@ -52,7 +52,7 @@
 
 .login-button {
     -fx-background-color: #43A047; /* Green background for primary action (Masuk) */
-    -fx-text-fill: #181A20; /* Dark text color */
+    -fx-text-fill: #ffffff; /* Dark text color */
     -fx-font-size: 18px;
     -fx-font-weight: bold;
     -fx-background-radius: 30px; /* Rounded buttons */

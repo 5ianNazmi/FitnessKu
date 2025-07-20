@@ -8,6 +8,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 
 <AnchorPane prefHeight="600.0" prefWidth="400.0" styleClass="notif-root" stylesheets="@../resource/VOpsiNotif.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.COpsiNotif">
@@ -26,10 +27,14 @@
             <Button fx:id="saveBtn" onAction="#handleSave" styleClass="notif-save-btn" text="Simpan" />
         </VBox>
     </VBox>
-     <!-- Label tersimpan dipindahkan ke dalam timeBox di atas tombol simpan -->
-   <ImageView fitHeight="23.0" fitWidth="38.0" layoutX="27.0" layoutY="29.0" onMouseClicked="#handleBackButton">
-      <image>
-         <Image url="@../extra/Screenshot_2025-07-15_222001-removebg-preview.png" />
-      </image>
-   </ImageView>
+   <Pane layoutX="27.0" layoutY="29.0" onMouseClicked="#handleBackButton">
+      <children>
+           <!-- Label tersimpan dipindahkan ke dalam timeBox di atas tombol simpan -->
+         <ImageView fitHeight="23.0" fitWidth="38.0">
+            <image>
+               <Image url="@../extra/Screenshot_2025-07-15_222001-removebg-preview.png" />
+            </image>
+         </ImageView>
+      </children>
+   </Pane>
 </AnchorPane>

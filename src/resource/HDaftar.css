@@ -1,7 +1,7 @@
 /* CSS Register Page - tema dark dan hijau seperti Login */
 
 .root {
-    -fx-background-color: #181A20;
+    -fx-background-color: #111;
     -fx-font-family: 'Arial', sans-serif;
 }
 
@@ -22,7 +22,7 @@
 .login-title {
     -fx-font-size: 28px;
     -fx-font-weight: bold;
-    -fx-text-fill: #43A047;
+    -fx-text-fill: #ffffff;
     -fx-alignment: center;
     -fx-padding: 0 0 20px 0;
 }
@@ -52,7 +52,7 @@
 
 .login-button {
     -fx-background-color: #43A047;
-    -fx-text-fill: #181A20;
+    -fx-text-fill: #ffffff;
     -fx-font-size: 18px;
     -fx-font-weight: bold;
     -fx-background-radius: 30px;

@@ -9,7 +9,7 @@
 
 <AnchorPane prefHeight="600.0" prefWidth="400.0" stylesheets="@../resource/VOpsiWorkout.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.COpsiWorkout">
     <children>
-        <Text fill="#f8f8f8" layoutX="20.0" layoutY="55.0" styleClass="login-title" text="Pilih Opsi Workout" />
+        <Text fill="#f8f8f8" layoutX="78.0" layoutY="56.0" styleClass="login-title" text="Pilih Opsi Workout" />
         <Button fx:id="btnFullBody" layoutX="132.0" layoutY="453.0" onAction="#handleWorkoutOption" prefHeight="31.0" prefWidth="137.0" styleClass="transparent-workout-button" text="Full Body" />
         <Button fx:id="btnChest" layoutX="276.0" layoutY="156.0" onAction="#handleWorkoutOption" prefHeight="30.0" prefWidth="110.0" styleClass="transparent-workout-button" text="Chest" />
         <Button fx:id="btnAbs" layoutX="277.0" layoutY="210.0" onAction="#handleWorkoutOption" prefHeight="30.0" prefWidth="110.0" styleClass="transparent-workout-button" text="Abs" />

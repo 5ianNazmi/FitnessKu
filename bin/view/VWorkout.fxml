@@ -10,8 +10,8 @@
 <?import javafx.scene.layout.VBox?>
 
 <AnchorPane prefHeight="600.0" prefWidth="400.0" stylesheets="@../resource/VWorkout.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CWorkout">
-    <Label styleClass="workout-title" text="Pilih Workout" layoutX="136.0" layoutY="60.0" />
-    <ScrollPane fx:id="workoutScrollPane" layoutX="40.0" layoutY="100.0" prefWidth="320.0" prefHeight="350.0" styleClass="workout-scroll-pane" fitToWidth="true" hbarPolicy="NEVER" vbarPolicy="AS_NEEDED">
+    <Label layoutX="109.0" layoutY="59.0" styleClass="workout-title" text="Pilih Workout" />
+    <ScrollPane fx:id="workoutScrollPane" fitToWidth="true" hbarPolicy="NEVER" layoutX="40.0" layoutY="100.0" prefHeight="350.0" prefWidth="320.0" styleClass="workout-scroll-pane" vbarPolicy="AS_NEEDED">
         <VBox fx:id="workoutListBox" alignment="CENTER" spacing="24" styleClass="workout-list-container">
             <!-- Daftar workout akan diisi dari controller -->
         </VBox>
